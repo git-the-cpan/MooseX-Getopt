@@ -1,5 +1,13 @@
 Revision history for Perl extension MooseX-Getopt
 
+  * Makefile.PL:
+   - Bump dependency to Getopt::Long::Descriptive to 0.081 in an attempt to
+     avoid test failures.
+
+  * MooseX::Getopt::Dashes
+   - Document that using a cmd_flag argument to attributes can be used to
+     override the tr/_/-/ replacement ::Dashes does on attribute names
+
 0.26 Thu. Dec 10 2009
   * MooseX::Getopt::Basic
    - Fix bug with attribute names containing upper case letters.
@@ -42,7 +50,7 @@ Revision history for Perl extension MooseX-Getopt
       default config file name.
 
 0.20 Wed. July 9 2009
-	- fix MANIFEST.SKIP to avoid double-packaging
+    - fix MANIFEST.SKIP to avoid double-packaging
 
 0.19 Wed. July 8 2009
   * MooseX::Getopt
@@ -62,25 +70,25 @@ Revision history for Perl extension MooseX-Getopt
   * MooseX::Getopt
     - work with latest Moose (hdp)
 
-	~ unify module version numbers with dist version (hdp)
+    ~ unify module version numbers with dist version (hdp)
 
 0.16 Tue. February 17 2009
-	* t/
-		- run pod tests only if RELEASE_TESTING env var is set
+    * t/
+        - run pod tests only if RELEASE_TESTING env var is set
 
 0.15 Sat. July 26 2008
-	* MooseX::Getopt::OptionTypeMap
-	  - Accept type constraint objects in the type mapping, not just names
+    * MooseX::Getopt::OptionTypeMap
+      - Accept type constraint objects in the type mapping, not just names
 
 0.14 Thurs. July 10, 2008
-	* MooseX::Getopt::OptionTypeMap
-	  - Change 'Float' which doesn't exist to 'Num' which does (perigrin)
-	 
-	* MooseX::Getopt
-	  - removed the default handling with Getopt::Long::Descriptive
-	    as it would override constructor parameters and that was 
-	    bad. Besides, Moose will just DWIM on this anyway. (stevan)
-	    - added test for it (stevan)
+    * MooseX::Getopt::OptionTypeMap
+      - Change 'Float' which doesn't exist to 'Num' which does (perigrin)
+     
+    * MooseX::Getopt
+      - removed the default handling with Getopt::Long::Descriptive
+        as it would override constructor parameters and that was 
+        bad. Besides, Moose will just DWIM on this anyway. (stevan)
+        - added test for it (stevan)
 
     * t/
       - fixed Getopt::Long::Descriptive specific tests to only run 
