@@ -1,11 +1,14 @@
-
 package MooseX::Getopt::OptionTypeMap;
+BEGIN {
+  $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
+}
+BEGIN {
+  $MooseX::Getopt::OptionTypeMap::VERSION = '0.28';
+}
+# ABSTRACT: Storage for the option to type mappings
 
 use Moose 'confess', 'blessed';
 use Moose::Util::TypeConstraints 'find_type_constraint';
-
-our $VERSION   = '0.27';
-our $AUTHORITY = 'cpan:STEVAN';
 
 my %option_type_map = (
     'Bool'     => '!',
@@ -13,7 +16,7 @@ my %option_type_map = (
     'Int'      => '=i',
     'Num'      => '=f',
     'ArrayRef' => '=s@',
-    'HashRef'  => '=s%',    
+    'HashRef'  => '=s%',
 );
 
 sub has_option_type {
@@ -22,10 +25,10 @@ sub has_option_type {
     return 1 if exists $option_type_map{blessed($type_or_name) ? $type_or_name->name : $type_or_name};
 
     my $current = blessed($type_or_name) ? $type_or_name : find_type_constraint($type_or_name);
-    
+
     (defined $current)
         || confess "Could not find the type constraint for '$type_or_name'";
-    
+
     while (my $parent = $current->parent) {
         return 1 if exists $option_type_map{$parent->name};
         $current = $parent;
@@ -42,9 +45,9 @@ sub get_option_type {
     return $option_type_map{$name} if exists $option_type_map{$name};
 
     my $current = ref $type_or_name ? $type_or_name : find_type_constraint($type_or_name);
-    
+
     (defined $current)
-        || confess "Could not find the type constraint for '$type_or_name'";    
+        || confess "Could not find the type constraint for '$type_or_name'";
 
     while ( $current = $current->parent ) {
         return $option_type_map{$current->name}
@@ -69,12 +72,16 @@ sub add_option_type_to_map {
     $option_type_map{$type_name} = $option_string;
 }
 
-no Moose; no Moose::Util::TypeConstraints; 1;
+no Moose::Util::TypeConstraints;
+no Moose;
+
+1;
+
 
 __END__
-
-
 =pod
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -87,37 +94,64 @@ for more info about how to use this module.
 
 =head1 METHODS
 
-These are all class methods and should be called as such.
+=head2 B<has_option_type ($type_or_name)>
+
+=head2 B<get_option_type ($type_or_name)>
+
+=head2 B<add_option_type_to_map ($type_name, $option_spec)>
+
+=head1 AUTHORS
 
 =over 4
 
-=item B<has_option_type ($type_or_name)>
+=item *
 
-=item B<get_option_type ($type_or_name)>
+Stevan Little <stevan@iinteractive.com>
 
-=item B<add_option_type_to_map ($type_name, $option_spec)>
+=item *
 
-=item B<meta>
+Brandon L. Black <blblack@gmail.com>
+
+=item *
+
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+Ryan D Johnson <ryan@innerfence.com>
+
+=item *
+
+Drew Taylor <drew@drewtaylor.com>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+
+=item *
+
+Ævar Arnfjörð Bjarmason <avar@cpan.org>
+
+=item *
+
+Chris Prather <perigrin@cpan.org>
 
 =back
 
-=head1 BUGS
-
-All complex software has bugs lurking in it, and this module is no 
-exception. If you find a bug please either email me, or add the bug
-to cpan-RT.
-
-=head1 AUTHOR
-
-Stevan Little E<lt>stevan@iinteractive.comE<gt>
-
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2010 by Infinity Interactive, Inc.
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+

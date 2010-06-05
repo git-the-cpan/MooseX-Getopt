@@ -1,33 +1,56 @@
+
 use strict;
 use warnings;
-use inc::Module::Install 0.91;
 
-if ($Module::Install::AUTHOR) {
-    require Module::Install::AuthorRequires;
-    require Module::Install::AuthorTests;
+
+
+use ExtUtils::MakeMaker 6.31;
+
+
+
+my %WriteMakefileArgs = (
+  'ABSTRACT' => 'A Moose role for processing command line options',
+  'AUTHOR' => 'Stevan Little <stevan@iinteractive.com>, Brandon L. Black <blblack@gmail.com>, Yuval Kogman <nothingmuch@woobling.org>, Ryan D Johnson <ryan@innerfence.com>, Drew Taylor <drew@drewtaylor.com>, Tomas Doran <bobtfish@bobtfish.net>, Florian Ragwitz <rafl@debian.org>, Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>, Ævar Arnfjörð Bjarmason <avar@cpan.org>, Chris Prather <perigrin@cpan.org>',
+  'BUILD_REQUIRES' => {
+    'Test::Exception' => '0.21',
+    'Test::More' => '0.88'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'MooseX-Getopt',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'MooseX::Getopt',
+  'PREREQ_PM' => {
+    'Getopt::Long' => '2.37',
+    'Getopt::Long::Descriptive' => '0.081',
+    'Moose' => '0.56'
+  },
+  'VERSION' => '0.28',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
 }
 
-name 'MooseX-Getopt';
-license 'perl';
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
 
-all_from 'lib/MooseX/Getopt.pm';
+WriteMakefile(%WriteMakefileArgs);
 
-requires 'Moose'        => '0.56';
-requires 'Getopt::Long' => '2.37';
 
-# optional
-requires 'Getopt::Long::Descriptive' => '0.081';
 
-build_requires 'Test::Moose';
-build_requires 'Test::More'       => '0.62';
-build_requires 'Test::Exception'  => '0.21';
-
-author_requires 'Test::Pod' => 1.14;
-author_requires 'Test::Pod::Coverage' => '1.04';
-author_tests('t/author');
-
-resources repository => 'git://git.moose.perl.org/MooseX-Getopt.git';
-
-auto_manifest();
-
-WriteAll;

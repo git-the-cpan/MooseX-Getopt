@@ -1,8 +1,15 @@
-
 package MooseX::Getopt::GLD;
+BEGIN {
+  $MooseX::Getopt::GLD::AUTHORITY = 'cpan:STEVAN';
+}
+BEGIN {
+  $MooseX::Getopt::GLD::VERSION = '0.28';
+}
+# ABSTRACT: A Moose role for processing command line options with Getopt::Long::Descriptive
+
 use Moose::Role;
 
-use Getopt::Long::Descriptive;
+use Getopt::Long::Descriptive 0.081;
 
 with 'MooseX::Getopt::Basic';
 
@@ -31,9 +38,9 @@ sub _gld_spec {
             {
                 ( ( $opt->{required} && !exists($constructor_params->{$opt->{init_arg}}) ) ? (required => $opt->{required}) : () ),
                 # NOTE:
-                # remove this 'feature' because it didn't work 
+                # remove this 'feature' because it didn't work
                 # all the time, and so is better to not bother
-                # since Moose will handle the defaults just 
+                # since Moose will handle the defaults just
                 # fine anyway.
                 # - SL
                 #( exists $opt->{default}  ? (default  => $opt->{default})  : () ),
@@ -49,11 +56,15 @@ sub _gld_spec {
     return ( \@options, \%name_to_init_arg );
 }
 
-no Moose::Role; 1;
+no Moose::Role;
+
+1;
+
 
 __END__
-
 =pod
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -83,15 +94,58 @@ MooseX::Getopt::GLD - A Moose role for processing command line options with Geto
   ## on the command line
   % perl my_app_script.pl -in file.input -out file.dump
 
-=head1 DESCRIPTION
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Stevan Little <stevan@iinteractive.com>
+
+=item *
+
+Brandon L. Black <blblack@gmail.com>
+
+=item *
+
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+Ryan D Johnson <ryan@innerfence.com>
+
+=item *
+
+Drew Taylor <drew@drewtaylor.com>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+
+=item *
+
+Ævar Arnfjörð Bjarmason <avar@cpan.org>
+
+=item *
+
+Chris Prather <perigrin@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2009 by Infinity Interactive, Inc.
+This software is copyright (c) 2010 by Infinity Interactive, Inc.
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+

@@ -1,5 +1,12 @@
-
 package MooseX::Getopt::Basic;
+BEGIN {
+  $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
+}
+BEGIN {
+  $MooseX::Getopt::Basic::VERSION = '0.28';
+}
+# ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
+
 use Moose::Role;
 
 use MooseX::Getopt::OptionTypeMap;
@@ -7,7 +14,7 @@ use MooseX::Getopt::Meta::Attribute;
 use MooseX::Getopt::Meta::Attribute::NoGetopt;
 use Carp ();
 
-use Getopt::Long ();
+use Getopt::Long 2.37 ();
 
 has ARGV       => (is => 'rw', isa => 'ArrayRef', metaclass => "NoGetopt");
 has extra_argv => (is => 'rw', isa => 'ArrayRef', metaclass => "NoGetopt");
@@ -205,9 +212,9 @@ sub _attrs_to_options {
             opt_string => $opt_string,
             required   => $attr->is_required && !$attr->has_default && !$attr->has_builder && !exists $config_from_file->{$attr->name},
             # NOTE:
-            # this "feature" was breaking because 
-            # Getopt::Long::Descriptive would return 
-            # the default value as if it was a command 
+            # this "feature" was breaking because
+            # Getopt::Long::Descriptive would return
+            # the default value as if it was a command
             # line flag, which would then override the
             # one passed into a constructor.
             # See 100_gld_default_bug.t for an example
@@ -220,15 +227,18 @@ sub _attrs_to_options {
     return @options;
 }
 
-no Moose::Role; 1;
+no Moose::Role;
+1;
+
 
 __END__
-
 =pod
+
+=encoding utf-8
 
 =head1 NAME
 
-MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
+MooseX::Getopt::Basic - MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
 =head1 SYNOPSIS
 
@@ -265,14 +275,58 @@ doesn't make use of L<Getopt::Long::Descriptive> (or "GLD" for short).
 
 See L<MooseX::Getopt/new_with_options>.
 
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Stevan Little <stevan@iinteractive.com>
+
+=item *
+
+Brandon L. Black <blblack@gmail.com>
+
+=item *
+
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+Ryan D Johnson <ryan@innerfence.com>
+
+=item *
+
+Drew Taylor <drew@drewtaylor.com>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+
+=item *
+
+Ævar Arnfjörð Bjarmason <avar@cpan.org>
+
+=item *
+
+Chris Prather <perigrin@cpan.org>
+
+=back
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Infinity Interactive, Inc.
+This software is copyright (c) 2010 by Infinity Interactive, Inc.
 
-L<http://www.iinteractive.com>
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 

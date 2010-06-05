@@ -1,16 +1,24 @@
 Revision history for Perl extension MooseX-Getopt
 
+0.28 Sat. Jun 05 2010
+  * MooseX::Getopt::Strict
+    - Make it work with Getopt attribute traits in addition to
+      attribute metaclasses.
+
+  * Switch from Module::Install to Dist::Zilla.
+
+0.27 Sun. Feb 10 2010
   * Makefile.PL:
-   - Bump dependency to Getopt::Long::Descriptive to 0.081 in an attempt to
-     avoid test failures.
+    - Bump dependency to Getopt::Long::Descriptive to 0.081 in an attempt to
+      avoid test failures.
 
   * MooseX::Getopt::Dashes
-   - Document that using a cmd_flag argument to attributes can be used to
-     override the tr/_/-/ replacement ::Dashes does on attribute names
+    - Document that using a cmd_flag argument to attributes can be used to
+      override the tr/_/-/ replacement ::Dashes does on attribute names
 
 0.26 Thu. Dec 10 2009
   * MooseX::Getopt::Basic
-   - Fix bug with attribute names containing upper case letters.
+    - Fix bug with attribute names containing upper case letters.
   * Test suite:
     - Add t/106_no_ignore_case.t for testing the compatibility with
       no_ignore_case
@@ -83,15 +91,15 @@ Revision history for Perl extension MooseX-Getopt
 0.14 Thurs. July 10, 2008
     * MooseX::Getopt::OptionTypeMap
       - Change 'Float' which doesn't exist to 'Num' which does (perigrin)
-     
+
     * MooseX::Getopt
       - removed the default handling with Getopt::Long::Descriptive
-        as it would override constructor parameters and that was 
+        as it would override constructor parameters and that was
         bad. Besides, Moose will just DWIM on this anyway. (stevan)
         - added test for it (stevan)
 
     * t/
-      - fixed Getopt::Long::Descriptive specific tests to only run 
+      - fixed Getopt::Long::Descriptive specific tests to only run
         if Getopt::Long::Descriptive is there (stevan)
 
 0.13 Saturday, May 24, 2008
@@ -103,8 +111,8 @@ Revision history for Perl extension MooseX-Getopt
         that role be added at the same level as Getopt.
       - fixed miscapitalization of NoGetopt in the docs
       - added links to the traits in the docs
-      
-    ~ converted to Module::Install instead of 
+
+    ~ converted to Module::Install instead of
       Module::Build
 
 0.12 Fri. March 14, 2008
