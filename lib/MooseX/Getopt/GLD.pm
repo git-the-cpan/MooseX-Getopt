@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::GLD::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::GLD::VERSION = '0.29';
+  $MooseX::Getopt::GLD::VERSION = '0.30';
 }
 # ABSTRACT: A Moose role for processing command line options with Getopt::Long::Descriptive
 
@@ -12,6 +12,20 @@ use Moose::Role;
 use Getopt::Long::Descriptive 0.081;
 
 with 'MooseX::Getopt::Basic';
+
+has usage => (
+    is => 'rw', isa => 'Getopt::Long::Descriptive::Usage',
+    traits => ['NoGetopt'],
+);
+
+# captures the options: --help --usage --?
+has help_flag => (
+    is => 'ro', isa => 'Bool',
+    traits => ['Getopt'],
+    cmd_flag => 'help',
+    cmd_aliases => [ qw(usage ?) ],
+    documentation => 'Prints this usage information.',
+);
 
 around _getopt_spec => sub {
     shift;

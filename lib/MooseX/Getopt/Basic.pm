@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Basic::VERSION = '0.29';
+  $MooseX::Getopt::Basic::VERSION = '0.30';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -26,8 +26,10 @@ sub new_with_options {
     if($class->meta->does_role('MooseX::ConfigFromFile')) {
         local @ARGV = @ARGV;
 
+        # just get the configfile arg now; the rest of the args will be
+        # fetched later
         my $configfile;
-        my $opt_parser = Getopt::Long::Parser->new( config => [ qw( pass_through ) ] );
+        my $opt_parser = Getopt::Long::Parser->new( config => [ qw( no_auto_help pass_through ) ] );
         $opt_parser->getoptions( "configfile=s" => \$configfile );
 
         if(!defined $configfile) {
@@ -67,7 +69,7 @@ sub new_with_options {
     my $params = $config_from_file ? { %$config_from_file, %{$processed{params}} } : $processed{params};
 
     # did the user request usage information?
-    if ( $processed{usage} && ($params->{'?'} or $params->{help} or $params->{usage}) )
+    if ( $processed{usage} and $params->{help_flag} )
     {
         $class->_getopt_full_usage($processed{usage});
     }
@@ -75,6 +77,7 @@ sub new_with_options {
     $class->new(
         ARGV       => $processed{argv_copy},
         extra_argv => $processed{argv},
+        ( $processed{usage} ? ( usage => $processed{usage} ) : () ),
         %$constructor_params, # explicit params to ->new
         %$params, # params from CLI
     );
@@ -161,6 +164,7 @@ sub _traditional_spec {
 
 sub _compute_getopt_attrs {
     my $class = shift;
+    sort { $a->insertion_order <=> $b->insertion_order }
     grep {
         $_->does("MooseX::Getopt::Meta::Attribute::Trait")
             or

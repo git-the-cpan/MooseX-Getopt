@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.29';
+  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.30';
 }
 # ABSTRACT: Optional meta attribute for ignoring params
 
@@ -21,7 +21,7 @@ BEGIN {
   $Moose::Meta::Attribute::Custom::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $Moose::Meta::Attribute::Custom::NoGetopt::VERSION = '0.29';
+  $Moose::Meta::Attribute::Custom::NoGetopt::VERSION = '0.30';
 }
 sub register_implementation { 'MooseX::Getopt::Meta::Attribute::NoGetopt' }
 

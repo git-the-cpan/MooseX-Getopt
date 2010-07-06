@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::VERSION = '0.29';
+  $MooseX::Getopt::VERSION = '0.30';
 }
 # ABSTRACT: A Moose role for processing command line options
 
@@ -214,7 +214,8 @@ C<new_with_options> will throw an exception.
 
 If L<Getopt::Long::Descriptive> is installed and any of the following
 command line params are passed, the program will exit with usage
-information. You can add descriptions for each option by including a
+information (and the option's state will be stored in the help_flag
+attribute). You can add descriptions for each option by including a
 B<documentation> option for each attribute to document.
 
   --?
@@ -222,7 +223,7 @@ B<documentation> option for each attribute to document.
   --usage
 
 If you have L<Getopt::Long::Descriptive> the C<usage> param is also passed to
-C<new>.
+C<new> as the usage option.
 
 =head2 B<ARGV>
 
@@ -234,6 +235,16 @@ as it originally existed at the time of C<new_with_options>.
 This accessor contains an arrayref of leftover C<@ARGV> elements that
 L<Getopt::Long> did not parse.  Note that the real C<@ARGV> is left
 un-mangled.
+
+=head2 B<usage>
+
+This accessor contains the L<Getopt::Long::Descriptive::Usage> object (if
+L<Getopt::Long::Descriptive> is used).
+
+=head2 B<help_flag>
+
+This accessor contains the boolean state of the --help, --usage and --?
+options (true if any of these options were passed on the command line).
 
 =head2 B<meta>
 
