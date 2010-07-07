@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::VERSION = '0.30';
+  $MooseX::Getopt::VERSION = '0.31';
 }
 # ABSTRACT: A Moose role for processing command line options
 
