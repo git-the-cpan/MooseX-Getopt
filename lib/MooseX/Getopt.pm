@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::VERSION = '0.32';
+  $MooseX::Getopt::VERSION = '0.33';
 }
 # ABSTRACT: A Moose role for processing command line options
 
@@ -293,6 +293,10 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 =item *
 
 Chris Prather <perigrin@cpan.org>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
 
 =back
 

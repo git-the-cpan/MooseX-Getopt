@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.32';
+  $MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.33';
 }
 # ABSTRACT: Optional meta attribute trait for custom option names
 
@@ -41,7 +41,7 @@ BEGIN {
   $Moose::Meta::Attribute::Custom::Trait::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::Getopt::VERSION = '0.32';
+  $Moose::Meta::Attribute::Custom::Trait::Getopt::VERSION = '0.33';
 }
 sub register_implementation { 'MooseX::Getopt::Meta::Attribute::Trait' }
 
@@ -149,6 +149,10 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 =item *
 
 Chris Prather <perigrin@cpan.org>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
 
 =back
 

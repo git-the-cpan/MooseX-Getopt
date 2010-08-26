@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Basic::VERSION = '0.32';
+  $MooseX::Getopt::Basic::VERSION = '0.33';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -322,6 +322,10 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 =item *
 
 Chris Prather <perigrin@cpan.org>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
 
 =back
 

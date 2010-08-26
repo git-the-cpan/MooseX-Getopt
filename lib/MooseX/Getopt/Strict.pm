@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Strict::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Strict::VERSION = '0.32';
+  $MooseX::Getopt::Strict::VERSION = '0.33';
 }
 # ABSTRACT: only make options for attrs with the Getopt metaclass
 
@@ -82,6 +82,10 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 =item *
 
 Chris Prather <perigrin@cpan.org>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
 
 =back
 

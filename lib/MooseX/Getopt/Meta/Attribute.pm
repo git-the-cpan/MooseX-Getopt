@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Meta::Attribute::VERSION = '0.32';
+  $MooseX::Getopt::Meta::Attribute::VERSION = '0.33';
 }
 # ABSTRACT: Optional meta attribute for custom option names
 
@@ -22,7 +22,7 @@ BEGIN {
   $Moose::Meta::Attribute::Custom::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $Moose::Meta::Attribute::Custom::Getopt::VERSION = '0.32';
+  $Moose::Meta::Attribute::Custom::Getopt::VERSION = '0.33';
 }
 sub register_implementation { 'MooseX::Getopt::Meta::Attribute' }
 
@@ -141,6 +141,10 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 =item *
 
 Chris Prather <perigrin@cpan.org>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
 
 =back
 

@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::OptionTypeMap::VERSION = '0.32';
+  $MooseX::Getopt::OptionTypeMap::VERSION = '0.33';
 }
 # ABSTRACT: Storage for the option to type mappings
 
@@ -162,6 +162,10 @@ Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
 =item *
 
 Chris Prather <perigrin@cpan.org>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
 
 =back
 
