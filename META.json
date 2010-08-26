@@ -56,7 +56,7 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/MooseX-Getopt.git;a=summary"
       }
    },
-   "version" : "0.31",
+   "version" : "0.32",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

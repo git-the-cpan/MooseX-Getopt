@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::OptionTypeMap::VERSION = '0.31';
+  $MooseX::Getopt::OptionTypeMap::VERSION = '0.32';
 }
 # ABSTRACT: Storage for the option to type mappings
 
@@ -22,6 +22,15 @@ my %option_type_map = (
 sub has_option_type {
     my (undef, $type_or_name) = @_;
 
+    if (blessed($type_or_name)
+        && $type_or_name->isa('Moose::Meta::TypeConstraint::Union')) {
+        foreach my $union_type (@{$type_or_name->type_constraints}) {
+            return 1
+                if __PACKAGE__->has_option_type($union_type);
+        }
+        return 0;
+    }
+
     return 1 if exists $option_type_map{blessed($type_or_name) ? $type_or_name->name : $type_or_name};
 
     my $current = blessed($type_or_name) ? $type_or_name : find_type_constraint($type_or_name);
@@ -39,6 +48,16 @@ sub has_option_type {
 
 sub get_option_type {
     my (undef, $type_or_name) = @_;
+
+    if (blessed($type_or_name)
+        && $type_or_name->isa('Moose::Meta::TypeConstraint::Union')) {
+        foreach my $union_type (@{$type_or_name->type_constraints}) {
+            my $option_type = __PACKAGE__->get_option_type($union_type);
+            return $option_type
+                if defined $option_type;
+        }
+        return;
+    }
 
     my $name = blessed($type_or_name) ? $type_or_name->name : $type_or_name;
 

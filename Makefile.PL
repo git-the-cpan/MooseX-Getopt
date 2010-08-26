@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     'Getopt::Long::Descriptive' => '0.081',
     'Moose' => '0.56'
   },
-  'VERSION' => '0.31',
+  'VERSION' => '0.32',
   'test' => {
     'TESTS' => 't/*.t'
   }
