@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.33';
+  $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.34';
 }
 # ABSTRACT: Optional meta attribute trait for ignoring params
 
@@ -15,9 +15,6 @@ package # stop confusing PAUSE
     Moose::Meta::Attribute::Custom::Trait::NoGetopt;
 BEGIN {
   $Moose::Meta::Attribute::Custom::Trait::NoGetopt::AUTHORITY = 'cpan:STEVAN';
-}
-BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::NoGetopt::VERSION = '0.33';
 }
 sub register_implementation { 'MooseX::Getopt::Meta::Attribute::Trait::NoGetopt' }
 
@@ -104,11 +101,15 @@ Chris Prather <perigrin@cpan.org>
 
 Karen Etheridge <ether@cpan.org>
 
+=item *
+
+Jonathan Swartz <swartz@pobox.com>
+
 =back
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Infinity Interactive, Inc.
+This software is copyright (c) 2011 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

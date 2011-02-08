@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::Basic::VERSION = '0.33';
+  $MooseX::Getopt::Basic::VERSION = '0.34';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -12,6 +12,7 @@ use Moose::Role;
 use MooseX::Getopt::OptionTypeMap;
 use MooseX::Getopt::Meta::Attribute;
 use MooseX::Getopt::Meta::Attribute::NoGetopt;
+use MooseX::Getopt::ProcessedArgv;
 use Carp ();
 
 use Getopt::Long 2.37 ();
@@ -19,7 +20,7 @@ use Getopt::Long 2.37 ();
 has ARGV       => (is => 'rw', isa => 'ArrayRef', metaclass => "NoGetopt");
 has extra_argv => (is => 'rw', isa => 'ArrayRef', metaclass => "NoGetopt");
 
-sub new_with_options {
+sub process_argv {
     my ($class, @params) = @_;
 
     my $config_from_file;
@@ -69,17 +70,30 @@ sub new_with_options {
     my $params = $config_from_file ? { %$config_from_file, %{$processed{params}} } : $processed{params};
 
     # did the user request usage information?
-    if ( $processed{usage} and $params->{help_flag} )
-    {
+    if ( $processed{usage} and $params->{help_flag} ) {
         $class->_getopt_full_usage($processed{usage});
     }
 
+    return MooseX::Getopt::ProcessedArgv->new(
+         argv_copy          => $processed{argv_copy},
+         extra_argv         => $processed{argv},
+         usage              => $processed{usage},
+         constructor_params => $constructor_params, # explicit params to ->new
+         cli_params         => $params, # params from CLI
+    );
+}
+
+sub new_with_options {
+    my ($class, @params) = @_;
+
+    my $pa = $class->process_argv(@params);
+
     $class->new(
-        ARGV       => $processed{argv_copy},
-        extra_argv => $processed{argv},
-        ( $processed{usage} ? ( usage => $processed{usage} ) : () ),
-        %$constructor_params, # explicit params to ->new
-        %$params, # params from CLI
+        ARGV       => $pa->argv_copy,
+        extra_argv => $pa->extra_argv,
+        ( $pa->usage ? ( usage => $pa->usage ) : () ),
+        %{ $pa->constructor_params }, # explicit params to ->new
+        %{ $pa->cli_params }, # params from CLI
     );
 }
 
@@ -279,6 +293,10 @@ doesn't make use of L<Getopt::Long::Descriptive> (or "GLD" for short).
 
 See L<MooseX::Getopt/new_with_options>.
 
+=head2 process_argv
+
+See L<MooseX::Getopt/process_agv>.
+
 =head1 AUTHORS
 
 =over 4
@@ -327,11 +345,15 @@ Chris Prather <perigrin@cpan.org>
 
 Karen Etheridge <ether@cpan.org>
 
+=item *
+
+Jonathan Swartz <swartz@pobox.com>
+
 =back
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Infinity Interactive, Inc.
+This software is copyright (c) 2011 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

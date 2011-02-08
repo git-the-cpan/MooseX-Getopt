@@ -10,9 +10,9 @@ use ExtUtils::MakeMaker 6.31;
 
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'A Moose role for processing command line options',
-  'AUTHOR' => 'Stevan Little <stevan@iinteractive.com>, Brandon L. Black <blblack@gmail.com>, Yuval Kogman <nothingmuch@woobling.org>, Ryan D Johnson <ryan@innerfence.com>, Drew Taylor <drew@drewtaylor.com>, Tomas Doran <bobtfish@bobtfish.net>, Florian Ragwitz <rafl@debian.org>, Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>, Ævar Arnfjörð Bjarmason <avar@cpan.org>, Chris Prather <perigrin@cpan.org>, Karen Etheridge <ether@cpan.org>',
+  'AUTHOR' => 'Stevan Little <stevan@iinteractive.com>, Brandon L. Black <blblack@gmail.com>, Yuval Kogman <nothingmuch@woobling.org>, Ryan D Johnson <ryan@innerfence.com>, Drew Taylor <drew@drewtaylor.com>, Tomas Doran <bobtfish@bobtfish.net>, Florian Ragwitz <rafl@debian.org>, Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>, Ævar Arnfjörð Bjarmason <avar@cpan.org>, Chris Prather <perigrin@cpan.org>, Karen Etheridge <ether@cpan.org>, Jonathan Swartz <swartz@pobox.com>',
   'BUILD_REQUIRES' => {
-    'Test::Exception' => '0.21',
+    'Test::Fatal' => '0.003',
     'Test::More' => '0.88',
     'Test::Requires' => '0.05',
     'Test::Warn' => '0.21'
@@ -29,7 +29,7 @@ my %WriteMakefileArgs = (
     'Getopt::Long::Descriptive' => '0.081',
     'Moose' => '0.56'
   },
-  'VERSION' => '0.33',
+  'VERSION' => '0.34',
   'test' => {
     'TESTS' => 't/*.t'
   }

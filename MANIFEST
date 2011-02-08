@@ -15,6 +15,7 @@ lib/MooseX/Getopt/Meta/Attribute/NoGetopt.pm
 lib/MooseX/Getopt/Meta/Attribute/Trait.pm
 lib/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
 lib/MooseX/Getopt/OptionTypeMap.pm
+lib/MooseX/Getopt/ProcessedArgv.pm
 lib/MooseX/Getopt/Strict.pm
 t/000_load.t
 t/001_basic.t
@@ -27,6 +28,7 @@ t/007_nogetopt_trait.t
 t/008_configfromfile.t
 t/009_gld_and_explicit_options.t
 t/010_dashes.t
+t/011_process_argv.t
 t/100_gld_default_bug.t
 t/101_argv_bug.t
 t/102_basic_basic.t

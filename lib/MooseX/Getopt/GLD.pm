@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::GLD::AUTHORITY = 'cpan:STEVAN';
 }
 BEGIN {
-  $MooseX::Getopt::GLD::VERSION = '0.33';
+  $MooseX::Getopt::GLD::VERSION = '0.34';
 }
 # ABSTRACT: A Moose role for processing command line options with Getopt::Long::Descriptive
 
@@ -156,11 +156,15 @@ Chris Prather <perigrin@cpan.org>
 
 Karen Etheridge <ether@cpan.org>
 
+=item *
+
+Jonathan Swartz <swartz@pobox.com>
+
 =back
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Infinity Interactive, Inc.
+This software is copyright (c) 2011 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
