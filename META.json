@@ -59,7 +59,7 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/MooseX-Getopt.git;a=summary"
       }
    },
-   "version" : "0.35",
+   "version" : "0.36",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -183,18 +183,18 @@
             "version" : "3.101640"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereq",
+            "class" : "Dist::Zilla::Plugin::Prereqs",
             "config" : {
                "Dist::Zilla::Plugin::Prereqs" : {
                   "phase" : "runtime",
                   "type" : "requires"
                }
             },
-            "name" : "Prereq",
+            "name" : "Prereqs",
             "version" : "4.200001"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereq",
+            "class" : "Dist::Zilla::Plugin::Prereqs",
             "config" : {
                "Dist::Zilla::Plugin::Prereqs" : {
                   "phase" : "test",
