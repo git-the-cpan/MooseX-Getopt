@@ -34,7 +34,8 @@
          "requires" : {
             "Getopt::Long" : "2.37",
             "Getopt::Long::Descriptive" : "0.081",
-            "Moose" : "0.56"
+            "Moose" : "0.56",
+            "MooseX::Role::Parameterized" : 0
          }
       },
       "test" : {
@@ -59,7 +60,7 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/MooseX-Getopt.git;a=summary"
       }
    },
-   "version" : "0.36",
+   "version" : "0.37",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

@@ -27,9 +27,10 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Getopt::Long' => '2.37',
     'Getopt::Long::Descriptive' => '0.081',
-    'Moose' => '0.56'
+    'Moose' => '0.56',
+    'MooseX::Role::Parameterized' => '0'
   },
-  'VERSION' => '0.36',
+  'VERSION' => '0.37',
   'test' => {
     'TESTS' => 't/*.t'
   }
