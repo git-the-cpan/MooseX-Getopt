@@ -2,8 +2,8 @@ package MooseX::Getopt::OptionTypeMap;
 BEGIN {
   $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
 }
-BEGIN {
-  $MooseX::Getopt::OptionTypeMap::VERSION = '0.37';
+{
+  $MooseX::Getopt::OptionTypeMap::VERSION = '0.38';
 }
 # ABSTRACT: Storage for the option to type mappings
 

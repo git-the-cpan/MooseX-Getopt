@@ -2,8 +2,8 @@ package MooseX::Getopt::Meta::Attribute::NoGetopt;
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
-BEGIN {
-  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.37';
+{
+  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.38';
 }
 # ABSTRACT: Optional meta attribute for ignoring params
 
@@ -17,9 +17,6 @@ no Moose;
 # register this as a metaclass alias ...
 package # stop confusing PAUSE
     Moose::Meta::Attribute::Custom::NoGetopt;
-BEGIN {
-  $Moose::Meta::Attribute::Custom::NoGetopt::AUTHORITY = 'cpan:STEVAN';
-}
 sub register_implementation { 'MooseX::Getopt::Meta::Attribute::NoGetopt' }
 
 1;

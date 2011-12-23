@@ -2,8 +2,8 @@ package MooseX::Getopt::GLD;
 BEGIN {
   $MooseX::Getopt::GLD::AUTHORITY = 'cpan:STEVAN';
 }
-BEGIN {
-  $MooseX::Getopt::GLD::VERSION = '0.37';
+{
+  $MooseX::Getopt::GLD::VERSION = '0.38';
 }
 # ABSTRACT: A Moose role for processing command line options with Getopt::Long::Descriptive
 
