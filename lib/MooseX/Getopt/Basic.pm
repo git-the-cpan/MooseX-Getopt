@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.38';
+  $MooseX::Getopt::Basic::VERSION = '0.39';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -30,7 +30,7 @@ sub process_argv {
         # just get the configfile arg now; the rest of the args will be
         # fetched later
         my $configfile;
-        my $opt_parser = Getopt::Long::Parser->new( config => [ qw( no_auto_help pass_through ) ] );
+        my $opt_parser = Getopt::Long::Parser->new( config => [ qw( no_auto_help pass_through no_auto_version ) ] );
         $opt_parser->getoptions( "configfile=s" => \$configfile );
 
         if(!defined $configfile) {
@@ -353,7 +353,7 @@ Jonathan Swartz <swartz@pobox.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Infinity Interactive, Inc.
+This software is copyright (c) 2012 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

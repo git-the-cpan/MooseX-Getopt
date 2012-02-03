@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.38';
+  $MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.39';
 }
 # ABSTRACT: Optional meta attribute trait for custom option names
 
@@ -156,7 +156,7 @@ Jonathan Swartz <swartz@pobox.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Infinity Interactive, Inc.
+This software is copyright (c) 2012 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
