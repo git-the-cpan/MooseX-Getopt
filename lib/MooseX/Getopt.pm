@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::VERSION = '0.39';
+  $MooseX::Getopt::VERSION = '0.40';
 }
 # ABSTRACT: A Moose role for processing command line options
 
@@ -14,6 +14,7 @@ with 'MooseX::Getopt::GLD';
 no Moose::Role;
 
 1;
+
 
 
 __END__
@@ -89,7 +90,7 @@ specified by the C<--configfile> option (or the default you've
 given for the configfile attribute) for you.
 
 Options specified in multiple places follow the following
-precendence order: commandline overrides configfile, which
+precedence order: commandline overrides configfile, which
 overrides explicit new_with_options parameters.
 
 =head2 Supported Type Constraints
@@ -269,8 +270,6 @@ C<new_with_options>.
 See L<Getopt::Long#Configuring_Getopt::Long> for many other customizations you
 can make to how options are parsed. Simply C<use Getopt::Long qw(:config
 other_options...)> in your class to set these.
-
-=back
 
 =head1 AUTHORS
 

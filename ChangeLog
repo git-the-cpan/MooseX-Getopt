@@ -1,7 +1,13 @@
 Revision history for Perl extension MooseX-Getopt
 
+0.40 Fri 13 Apr 2012
+  * Fix tests when MooseX::ConfigFromFile is installed, with
+    Getopt::Long::Descriptive >= 0.091. RT#76287
+  * Pod fix from debian. Salvatore Bonaccorso <carnil@debian.org> RT#74681
+  * Spelling fix from debian. Jonathan Yu <jawnsy@cpan.org> RT#74681
+
 0.39 Fri 03 Feb 2012
-  * Fix argument parseing in process_argv when used with ConfigFromFile so that
+  * Fix argument parsing in process_argv when used with ConfigFromFile so that
     -v can be used as expected, rather than being grabbed as --version
 
 0.38 Fri 23 Dec 2011

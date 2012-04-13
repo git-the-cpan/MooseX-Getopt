@@ -15,7 +15,7 @@
       "Jonathan Swartz <swartz@pobox.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.112621",
+   "generated_by" : "Dist::Zilla version 4.300014, CPAN::Meta::Converter version 2.120630",
    "license" : [
       "perl_5"
    ],
@@ -35,7 +35,7 @@
             "Getopt::Long" : "2.37",
             "Getopt::Long::Descriptive" : "0.081",
             "Moose" : "0.56",
-            "MooseX::Role::Parameterized" : 0
+            "MooseX::Role::Parameterized" : "0"
          }
       },
       "test" : {
@@ -60,98 +60,98 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/MooseX-Getopt.git;a=summary"
       }
    },
-   "version" : "0.39",
+   "version" : "0.40",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
             "name" : "@FLORA/@Basic/GatherDir",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
             "name" : "@FLORA/@Basic/PruneCruft",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
             "name" : "@FLORA/@Basic/ManifestSkip",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
             "name" : "@FLORA/@Basic/MetaYAML",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
             "name" : "@FLORA/@Basic/License",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme",
             "name" : "@FLORA/@Basic/Readme",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExtraTests",
             "name" : "@FLORA/@Basic/ExtraTests",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
             "name" : "@FLORA/@Basic/ExecDir",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::ShareDir",
             "name" : "@FLORA/@Basic/ShareDir",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker",
             "name" : "@FLORA/@Basic/MakeMaker",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@FLORA/@Basic/Manifest",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
             "name" : "@FLORA/@Basic/TestRelease",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
             "name" : "@FLORA/@Basic/ConfirmRelease",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@FLORA/@Basic/UploadToCPAN",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@FLORA/MetaConfig",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "@FLORA/MetaJSON",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
             "name" : "@FLORA/PkgVersion",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
             "name" : "@FLORA/PodSyntaxTests",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::NoTabsTests",
@@ -161,17 +161,17 @@
          {
             "class" : "Dist::Zilla::Plugin::PodCoverageTests",
             "name" : "@FLORA/PodCoverageTests",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaResources",
             "name" : "@FLORA/MetaResources",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",
             "name" : "@FLORA/Authority",
-            "version" : "1.005"
+            "version" : "1.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::EOLTests",
@@ -192,7 +192,7 @@
                }
             },
             "name" : "Prereqs",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -203,37 +203,37 @@
                }
             },
             "name" : "TestRequires",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":InstallModules",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":IncModules",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":TestFiles",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ExecFiles",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ShareFiles",
-            "version" : "4.300005"
+            "version" : "4.300014"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":MainModule",
-            "version" : "4.300005"
+            "version" : "4.300014"
          }
       ],
       "zilla" : {
@@ -241,7 +241,7 @@
          "config" : {
             "is_trial" : "0"
          },
-         "version" : "4.300005"
+         "version" : "4.300014"
       }
    },
    "x_authority" : "cpan:STEVAN"
