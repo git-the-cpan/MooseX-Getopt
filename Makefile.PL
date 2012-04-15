@@ -15,6 +15,7 @@ my %WriteMakefileArgs = (
     "Test::Fatal" => "0.003",
     "Test::More" => "0.88",
     "Test::Requires" => "0.05",
+    "Test::Trap" => 0,
     "Test::Warn" => "0.21"
   },
   "CONFIGURE_REQUIRES" => {
@@ -30,7 +31,7 @@ my %WriteMakefileArgs = (
     "Moose" => "0.56",
     "MooseX::Role::Parameterized" => 0
   },
-  "VERSION" => "0.40",
+  "VERSION" => "0.41",
   "test" => {
     "TESTS" => "t/*.t"
   }

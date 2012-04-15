@@ -43,11 +43,12 @@
             "Test::Fatal" : "0.003",
             "Test::More" : "0.88",
             "Test::Requires" : "0.05",
+            "Test::Trap" : "0",
             "Test::Warn" : "0.21"
          }
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
          "mailto" : "bug-MooseX-Getopt@rt.cpan.org",
@@ -60,7 +61,7 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/MooseX-Getopt.git;a=summary"
       }
    },
-   "version" : "0.40",
+   "version" : "0.41",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -239,7 +240,7 @@
       "zilla" : {
          "class" : "Dist::Zilla::Dist::Builder",
          "config" : {
-            "is_trial" : "0"
+            "is_trial" : "1"
          },
          "version" : "4.300014"
       }

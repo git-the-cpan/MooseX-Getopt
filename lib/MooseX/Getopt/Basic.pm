@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.40';
+  $MooseX::Getopt::Basic::VERSION = '0.41'; # TRIAL
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -152,7 +152,8 @@ sub _getopt_spec_exception {
 
 sub _getopt_full_usage {
     my ($self, $usage) = @_;
-    $usage->die;
+    print $usage->text;
+    exit 0;
 }
 
 sub _usage_format {
