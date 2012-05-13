@@ -1,5 +1,9 @@
 Revision history for Perl extension MooseX-Getopt
 
+0.45      2012-05-13 09:49:58 PDT-0700
+ - use Path::Class in test to avoid test failures on MSWin32 with filename
+   construction
+
 0.44      2012-05-11 10:44:48 PDT-0700
  - now respecting value of configfile passed to the constructor, when used in
    conjunction with MooseX::ConfigFromFile. (Karen Etheridge)

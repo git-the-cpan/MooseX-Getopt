@@ -14,6 +14,7 @@ author:
   - 'Karen Etheridge <ether@cpan.org>'
   - 'Jonathan Swartz <swartz@pobox.com>'
 build_requires:
+  Path::Class: 0
   Test::Fatal: 0.003
   Test::More: 0.88
   Test::Requires: 0.05
@@ -37,7 +38,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Getopt
   homepage: http://metacpan.org/release/MooseX-Getopt
   repository: git://git.moose.perl.org/MooseX-Getopt.git
-version: 0.44
+version: 0.45
 x_Dist_Zilla:
   plugins:
     -
