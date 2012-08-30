@@ -1,12 +1,9 @@
 package MooseX::Getopt::Meta::Attribute;
-{
-  $MooseX::Getopt::Meta::Attribute::VERSION = '0.46';
-}
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::VERSION = '0.46';
+  $MooseX::Getopt::Meta::Attribute::VERSION = '0.47';
 }
 # ABSTRACT: Optional meta attribute for custom option names
 
