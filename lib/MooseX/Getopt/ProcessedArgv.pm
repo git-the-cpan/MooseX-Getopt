@@ -1,9 +1,12 @@
 package MooseX::Getopt::ProcessedArgv;
+{
+  $MooseX::Getopt::ProcessedArgv::VERSION = '0.46';
+}
 BEGIN {
   $MooseX::Getopt::ProcessedArgv::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::ProcessedArgv::VERSION = '0.45';
+  $MooseX::Getopt::ProcessedArgv::VERSION = '0.46';
 }
 use Moose;
 # ABSTRACT: MooseX::Getopt::ProcessedArgv - Class containing the results of process_argv

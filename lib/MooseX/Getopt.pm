@@ -1,9 +1,14 @@
 package MooseX::Getopt;
+{
+  $MooseX::Getopt::VERSION = '0.46';
+}
+# git description: v0.45-6-gebfe319
+
 BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::VERSION = '0.45';
+  $MooseX::Getopt::VERSION = '0.46';
 }
 # ABSTRACT: A Moose role for processing command line options
 
@@ -219,7 +224,9 @@ information (and the option's state will be stored in the help_flag
 attribute). You can add descriptions for each option by including a
 B<documentation> option for each attribute to document.
 
+  -?
   --?
+  -h
   --help
   --usage
 

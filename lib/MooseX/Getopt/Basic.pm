@@ -1,9 +1,12 @@
 package MooseX::Getopt::Basic;
+{
+  $MooseX::Getopt::Basic::VERSION = '0.46';
+}
 BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.45';
+  $MooseX::Getopt::Basic::VERSION = '0.46';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
