@@ -1,10 +1,9 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More tests => 69;
+use Test::More tests => 70;
 use Test::Moose;
+use Test::NoWarnings 1.04 ':early';
 
 BEGIN {
     use_ok('MooseX::Getopt');
@@ -77,7 +76,6 @@ BEGIN {
         default   => 832,
         cmd_flag  => 'p',
     );
-
 }
 
 foreach my $attr_name (qw(data cow horse _private_stuff_cmdline)) {

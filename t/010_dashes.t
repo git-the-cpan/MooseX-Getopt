@@ -1,10 +1,9 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More tests => 7;
+use Test::More tests => 8;
 use Test::Fatal;
+use Test::NoWarnings 1.04 ':early';
 
 
 BEGIN {

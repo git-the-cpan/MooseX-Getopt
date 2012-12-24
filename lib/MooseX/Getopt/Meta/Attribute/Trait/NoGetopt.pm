@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.47';
+  $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.48';
 }
 # ABSTRACT: Optional meta attribute trait for ignoring params
 
@@ -17,8 +17,8 @@ sub register_implementation { 'MooseX::Getopt::Meta::Attribute::Trait::NoGetopt'
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -112,4 +112,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

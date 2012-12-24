@@ -1,9 +1,9 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More tests => 6;
+use Test::More tests => 7;
+use Test::NoWarnings 1.04 ':early';
+use Test::Fatal;
 
 BEGIN {
     use_ok('MooseX::Getopt');
@@ -31,7 +31,6 @@ BEGIN {
         isa     => 'ArrayOfInts',
         default => sub { [0] }
     );
-
 }
 
 {
@@ -55,9 +54,11 @@ BEGIN {
 # Make sure it really used our =i@, instead of falling back
 #  to =s@ via the type system, and test that exceptions work
 #  while we're at it.
-eval {
-    local @ARGV = ('--nums', 3, '--nums', 'foo');
-
-    my $app = App->new_with_options;
-};
-like($@, qr/Value "foo" invalid/, 'Numeric constraint enforced');
+like(
+    exception {
+        local @ARGV = ('--nums', 3, '--nums', 'foo');
+        my $app = App->new_with_options;
+    },
+    qr/Value "foo" invalid/,
+    'Numeric constraint enforced',
+);

@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::OptionTypeMap::VERSION = '0.47';
+  $MooseX::Getopt::OptionTypeMap::VERSION = '0.48';
 }
 # ABSTRACT: Storage for the option to type mappings
 
@@ -96,8 +96,8 @@ no Moose;
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -181,4 +181,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

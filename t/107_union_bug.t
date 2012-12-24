@@ -1,9 +1,8 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 6;
+use Test::NoWarnings 1.04 ':early';
 
 {
     package example;
@@ -61,6 +60,4 @@ use Test::More;
     is($example->other,'test');
     is_deeply($example->results, [qw(1234 5678 9012)], 'result as expected');
 }
-
-done_testing;
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env perl
-
 # The documentation claims:
 #   If Getopt::Long::Descriptive is installed and any of the following command
 #   line params are passed (--help, --usage, --?), the program will exit with
@@ -19,7 +17,8 @@
 # Update: since 0.41, usage info is printed to stdout, not stderr.
 
 use strict; use warnings;
-use Test::More tests => 22;
+use Test::More tests => 23;
+use Test::NoWarnings 1.04 ':early';
 use Test::Trap;
 
 {

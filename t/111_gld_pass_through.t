@@ -1,9 +1,8 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More tests => 5;
+use Test::More tests => 6;
+use Test::NoWarnings 1.04 ':early';
 
 use Test::Requires {
     'Getopt::Long::Descriptive' => 0.01, # skip all if not installed
@@ -18,7 +17,6 @@ use_ok('MooseX::Getopt::GLD');
     with 'MooseX::Getopt::GLD' => { getopt_conf => [ 'pass_through' ] };
 
     has 'foo' => (
-        metaclass   => 'Getopt',
         is          => 'ro',
         isa         => 'Int',
     );
@@ -31,7 +29,6 @@ use_ok('MooseX::Getopt::GLD');
     with 'MooseX::Getopt::GLD' => { getopt_conf => [ 'pass_through' ] };;
 
     has 'bar' => (
-        metaclass   => 'Getopt',
         is          => 'ro',
         isa         => 'Int',
     );

@@ -1,9 +1,8 @@
-#!/usr/bin/env perl
-
 use strict;
 use warnings;
 
-use Test::More tests => 3;
+use Test::More tests => 4;
+use Test::NoWarnings 1.04 ':early';
 
 use MooseX::Getopt;
 

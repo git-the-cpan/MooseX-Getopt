@@ -19,6 +19,7 @@ lib/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
 lib/MooseX/Getopt/OptionTypeMap.pm
 lib/MooseX/Getopt/ProcessedArgv.pm
 lib/MooseX/Getopt/Strict.pm
+t/00-check-deps.t
 t/00-compile.t
 t/000_load.t
 t/001_basic.t
@@ -55,4 +56,7 @@ t/release-eol.t
 t/release-minimum-version.t
 t/release-no-tabs.t
 t/release-pod-coverage.t
+t/release-pod-linkcheck.t
+t/release-pod-no404s.t
 t/release-pod-syntax.t
+t/release-test-version.t

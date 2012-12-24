@@ -1,12 +1,11 @@
-#!/usr/bin/env perl
-
 # Re RT#58715 and the claim in the documentation:
 #   If you have Getopt::Long::Descriptive the usage param is also passed to new.
 
 # This tests the fix (that fulfills the documentation claim).
 
 use strict; use warnings;
-use Test::More tests => 3;
+use Test::More tests => 4;
+use Test::NoWarnings 1.04 ':early';
 
 {
     package MyClass;

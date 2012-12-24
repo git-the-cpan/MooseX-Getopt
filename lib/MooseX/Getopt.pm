@@ -1,11 +1,11 @@
 package MooseX::Getopt;
-# git description: v0.46-1-g0aef971
+# git description: v0.47-18-g83446b7
 
 BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::VERSION = '0.47';
+  $MooseX::Getopt::VERSION = '0.48';
 }
 # ABSTRACT: A Moose role for processing command line options
 
@@ -17,9 +17,8 @@ no Moose::Role;
 
 1;
 
-
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -243,9 +242,9 @@ un-mangled.
 
 B<Important>: By default, L<Getopt::Long> will reject unrecognized I<options>
 (that is, options that do not correspond with attributes using the Getopt
-trait). To disable this, and allow options to also be saved in C<extra_argv> (for example to pass along to another class's C<new_with_options>), enable the
-C<pass_through> option of L<Getopt::Long> for your class:  C<use Getopt::Long
-qw(:config pass_through);>
+trait). To disable this, and allow options to also be saved in C<extra_argv> (for example to pass along to another class's C<new_with_options>), you can either enable the
+C<pass_through> option of L<Getopt::Long> for your class:  C<< use Getopt::Long
+qw(:config pass_through); >> or specify a value for for L<MooseX::Getopt::GLD>'s C<getopt_conf> parameter.
 
 =head2 B<usage>
 
@@ -256,6 +255,14 @@ L<Getopt::Long::Descriptive> is used).
 
 This accessor contains the boolean state of the --help, --usage and --?
 options (true if any of these options were passed on the command line).
+
+=head2 B<print_usage_text>
+
+This method is called internally when the C<help_flag> state is true.
+It prints the text from the C<usage> object (see above) to stdout and then the
+program terminates normally.  You can apply a method modification (see
+L<Moose::Manual::MethodModifiers>) if different behaviour is desired, for
+example to include additional text.
 
 =head2 B<meta>
 
@@ -271,7 +278,7 @@ C<new_with_options>.
 
 =head2 More Customization Options
 
-See L<Getopt::Long#Configuring_Getopt::Long> for many other customizations you
+See L<Getopt::Long/Configuring Getopt::Long> for many other customizations you
 can make to how options are parsed. Simply C<use Getopt::Long qw(:config
 other_options...)> in your class to set these.
 
@@ -337,4 +344,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

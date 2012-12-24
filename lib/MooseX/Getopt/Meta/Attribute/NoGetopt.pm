@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.47';
+  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.48';
 }
 # ABSTRACT: Optional meta attribute for ignoring params
 
@@ -21,8 +21,8 @@ sub register_implementation { 'MooseX::Getopt::Meta::Attribute::NoGetopt' }
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -52,7 +52,26 @@ that a specific attribute should B<not> be processed by
 C<MooseX::Getopt>. All you need to do is specify the C<NoGetopt>
 metaclass.
 
-  has 'foo' => (metaclass => 'NoGetopt', ... );
+  has 'foo' => (metaclass => 'MooseX::Getopt::Meta::Attribute::NoGetopt', ... );
+
+=head2 Use 'traits' instead of 'metaclass'
+
+You should rarely need to explicitly set the attribute metaclass. It is much
+preferred to simply provide a trait (a role applied to the attribute
+metaclass), which allows other code to futher modify the attribute by applying
+additional roles.
+
+Therefore, you should first try to do this:
+
+  has 'foo' => (traits => ['NoGetopt', ...], ...);
+
+=head2 Custom Metaclass alias
+
+This now takes advantage of the Moose 0.19 feature to support
+custom attribute metaclass. This means you can also
+use this as the B<NoGetopt> alias, like so:
+
+  has 'foo' => (metaclass => 'NoGetopt', cmd_flag => 'f');
 
 =head1 AUTHORS
 
@@ -116,4 +135,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

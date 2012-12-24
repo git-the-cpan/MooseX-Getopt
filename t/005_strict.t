@@ -1,24 +1,22 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More tests => 10;
+use Test::More tests => 11;
 use Test::Fatal;
+use Test::NoWarnings 1.04 ':early';
 
 BEGIN {
     use_ok('MooseX::Getopt');
 }
 
 {
-
     package App;
     use Moose;
 
     with 'MooseX::Getopt::Strict';
 
     has 'data' => (
-        metaclass => 'Getopt',
+        traits    => ['Getopt'],
         is        => 'ro',
         isa       => 'Str',
         default   => 'file.dat',
@@ -26,7 +24,7 @@ BEGIN {
     );
 
     has 'cow' => (
-        metaclass   => 'Getopt',
+        traits      => ['Getopt'],
         is          => 'ro',
         isa         => 'Str',
         default     => 'moo',

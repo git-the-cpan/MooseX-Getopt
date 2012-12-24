@@ -1,6 +1,8 @@
 use strict;
 use warnings;
-use Test::More;
+
+use Test::More tests => 22;
+use Test::NoWarnings 1.04 ':early';
 use Moose ();
 use Moose::Meta::Class;
 
@@ -52,6 +54,4 @@ foreach my $role (qw/
 
     }
 }
-
-done_testing;
 

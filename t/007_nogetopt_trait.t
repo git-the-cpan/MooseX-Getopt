@@ -1,10 +1,9 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More tests => 9;
+use Test::More tests => 10;
 use Test::Fatal;
+use Test::NoWarnings 1.04 ':early';
 
 BEGIN {
     use_ok('MooseX::Getopt');
@@ -78,7 +77,6 @@ BEGIN {
         default   => 832,
         cmd_flag  => 'p',
     );
-
 }
 
 {

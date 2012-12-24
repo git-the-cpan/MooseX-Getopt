@@ -1,20 +1,9 @@
-#!/usr/bin/perl
-
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 6;
 use Test::Fatal 0.003;
-
-if ( !eval { require Test::Deep } )
-{
-    plan skip_all => 'Test requires Test::Deep';
-    exit;
-}
-else
-{
-    plan tests => 6;
-}
+use Test::Requires 'Test::Deep';
 
 {
     package Testing::Foo;
@@ -47,17 +36,17 @@ is(
 );
 isa_ok($pa, 'MooseX::Getopt::ProcessedArgv');
 
-Test::Deep::cmp_deeply($pa->argv_copy, [
+cmp_deeply($pa->argv_copy, [
     '--bar',
     '10',
     'file.dat'
 ], 'argv_copy');
-Test::Deep::cmp_deeply($pa->cli_params, {
+cmp_deeply($pa->cli_params, {
     'bar' => 10
 }, 'cli_params');
-Test::Deep::cmp_deeply($pa->constructor_params, {
+cmp_deeply($pa->constructor_params, {
     'baz' => 100
 }, 'constructor_params');
-Test::Deep::cmp_deeply($pa->extra_argv, [
+cmp_deeply($pa->extra_argv, [
     'file.dat'
 ], 'extra_argv');

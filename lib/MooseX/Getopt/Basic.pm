@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.47';
+  $MooseX::Getopt::Basic::VERSION = '0.48';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -17,8 +17,8 @@ use Carp ();
 
 use Getopt::Long 2.37 ();
 
-has ARGV       => (is => 'rw', isa => 'ArrayRef', metaclass => "NoGetopt");
-has extra_argv => (is => 'rw', isa => 'ArrayRef', metaclass => "NoGetopt");
+has ARGV       => (is => 'rw', isa => 'ArrayRef', traits => ['NoGetopt']);
+has extra_argv => (is => 'rw', isa => 'ArrayRef', traits => ['NoGetopt']);
 
 sub process_argv {
     my ($class, @params) = @_;
@@ -79,7 +79,7 @@ sub process_argv {
 
     # did the user request usage information?
     if ( $processed{usage} and $params->{help_flag} ) {
-        $class->_getopt_full_usage($processed{usage});
+        $class->print_usage_text($processed{usage});
     }
 
     return MooseX::Getopt::ProcessedArgv->new(
@@ -158,11 +158,14 @@ sub _getopt_spec_exception {
     die @$warnings, $exception;
 }
 
-sub _getopt_full_usage {
+#(this is already documented in MooseX::Getopt. But FIXME later, via RT#82195)
+sub print_usage_text {
     my ($self, $usage) = @_;
     print $usage->text;
     exit 0;
 }
+# maintained for backwards compatibility only
+sub _getopt_full_usage { shift->print_usage_text(@_) }
 
 sub _usage_format {
     return "usage: %c %o";
@@ -257,8 +260,8 @@ sub _attrs_to_options {
 no Moose::Role;
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -304,7 +307,9 @@ See L<MooseX::Getopt/new_with_options>.
 
 =head2 process_argv
 
-See L<MooseX::Getopt/process_agv>.
+See L<MooseX::Getopt/process_argv>.
+
+=for Pod::Coverage print_usage_text
 
 =head1 AUTHORS
 
@@ -368,4 +373,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

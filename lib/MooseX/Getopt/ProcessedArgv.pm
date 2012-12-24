@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::ProcessedArgv::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::ProcessedArgv::VERSION = '0.47';
+  $MooseX::Getopt::ProcessedArgv::VERSION = '0.48';
 }
 use Moose;
 # ABSTRACT: MooseX::Getopt::ProcessedArgv - Class containing the results of process_argv
@@ -20,8 +20,8 @@ __PACKAGE__->meta->make_immutable();
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -133,4 +133,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

@@ -13,8 +13,11 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Stevan Little <stevan\@iinteractive.com>, Brandon L. Black <blblack\@gmail.com>, Yuval Kogman <nothingmuch\@woobling.org>, Ryan D Johnson <ryan\@innerfence.com>, Drew Taylor <drew\@drewtaylor.com>, Tomas Doran <bobtfish\@bobtfish.net>, Florian Ragwitz <rafl\@debian.org>, Dagfinn Ilmari Manns\303\245ker <ilmari\@ilmari.org>, \303\206var Arnfj\303\266r\303\260 Bjarmason <avar\@cpan.org>, Chris Prather <perigrin\@cpan.org>, Karen Etheridge <ether\@cpan.org>, Jonathan Swartz <swartz\@pobox.com>",
   "BUILD_REQUIRES" => {
     "Path::Class" => 0,
+    "Test::CheckDeps" => "0.002",
     "Test::Fatal" => "0.003",
+    "Test::Moose" => 0,
     "Test::More" => "0.88",
+    "Test::NoWarnings" => "1.04",
     "Test::Requires" => "0.05",
     "Test::Trap" => 0,
     "Test::Warn" => "0.21"
@@ -32,7 +35,7 @@ my %WriteMakefileArgs = (
     "Moose" => "0.56",
     "MooseX::Role::Parameterized" => 0
   },
-  "VERSION" => "0.47",
+  "VERSION" => "0.48",
   "test" => {
     "TESTS" => "t/*.t"
   }
