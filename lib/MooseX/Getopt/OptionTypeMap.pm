@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::OptionTypeMap::VERSION = '0.48';
+  $MooseX::Getopt::OptionTypeMap::VERSION = '0.49';
 }
 # ABSTRACT: Storage for the option to type mappings
 

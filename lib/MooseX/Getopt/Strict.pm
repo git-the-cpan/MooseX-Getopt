@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Strict::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Strict::VERSION = '0.48';
+  $MooseX::Getopt::Strict::VERSION = '0.49';
 }
 # ABSTRACT: only make options for attrs with the Getopt metaclass
 

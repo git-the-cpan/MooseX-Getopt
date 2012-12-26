@@ -1,14 +1,11 @@
 use strict;
 use warnings;
 
+use Test::Requires 'MooseX::ConfigFromFile';    # skip all if not installed
 use Test::More tests => 38;
 use Test::Fatal;
 use File::Spec;
 use Test::NoWarnings 1.04 ':early';
-
-use Test::Requires {
-    'MooseX::ConfigFromFile' => 0.01, # skip all if not installed
-};
 
 {
     package App;
@@ -85,12 +82,10 @@ use Test::Requires {
 {
     local @ARGV = qw( --required_from_argv 1 );
 
-    if ($Getopt::Long::Descriptive::VERSION >= 0.091) {
-        like exception { App->new_with_options }, qr/Mandatory parameter 'required_from_config' missing/;
-    }
-    else {
-        like exception { App->new_with_options }, qr/Required option missing: required_from_config/;
-    }
+    like exception { App->new_with_options },
+        ($Getopt::Long::Descriptive::VERSION >= 0.091
+            ? qr/Mandatory parameter 'required_from_config' missing/
+            : qr/Required option missing: required_from_config/);
 
     {
         my $app = App::DefaultConfigFile->new_with_options;
@@ -159,12 +154,10 @@ use Test::Requires {
 # Required arg not supplied from cmdline
 {
     local @ARGV = qw( --configfile /notused );
-    if ($Getopt::Long::Descriptive::VERSION >= 0.091) {
-        like exception { App->new_with_options }, qr/Mandatory parameter 'required_from_argv' missing/;
-    }
-    else {
-        like exception { App->new_with_options }, qr/Required option missing: required_from_argv/;
-    }
+    like exception { App->new_with_options },
+        ($Getopt::Long::Descriptive::VERSION >= 0.091
+            ? qr/Mandatory parameter 'required_from_argv' missing/
+            : qr/Required option missing: required_from_argv/);
 }
 
 # Config file value overriden from cmdline

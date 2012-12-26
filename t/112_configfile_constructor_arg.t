@@ -1,14 +1,18 @@
 use strict;
 use warnings;
 
-use Test::Requires
-    'MooseX::SimpleConfig'; # skip all if not installed
-
 # respect the configfile value passed into the constructor.
 
+use Test::Requires 'MooseX::SimpleConfig';  # skip all if not installed
 use Test::More tests => 3;
 use Test::NoWarnings 1.04 ':early';
 use Path::Class;    # exports file, dir
+
+# avoid warning if all we have installed is YAML or YAML::Syck - the user will
+# see this eventually when he actually uses MooseX::SimpleConfig in his own
+# code
+use Config::Any::YAML;
+$Config::Any::YAML::NO_YAML_XS_WARNING = 1;
 
 {
     package Foo;

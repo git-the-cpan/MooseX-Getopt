@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::VERSION = '0.48';
+  $MooseX::Getopt::Meta::Attribute::VERSION = '0.49';
 }
 # ABSTRACT: Optional meta attribute for custom option names
 
@@ -40,7 +40,7 @@ MooseX::Getopt::Meta::Attribute - Optional meta attribute for custom option name
   with 'MooseX::Getopt';
 
   has 'data' => (
-      metaclass => ['Getopt'],
+      metaclass => 'Getopt',
       is        => 'ro',
       isa       => 'Str',
       default   => 'file.dat',
