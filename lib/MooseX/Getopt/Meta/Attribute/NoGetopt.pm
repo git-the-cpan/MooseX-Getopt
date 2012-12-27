@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.49';
+  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.50';
 }
 # ABSTRACT: Optional meta attribute for ignoring params
 
