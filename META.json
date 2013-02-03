@@ -54,8 +54,7 @@
          },
          "requires" : {
             "Config::Any::YAML" : "0",
-            "File::Spec" : "0",
-            "Path::Class" : "0",
+            "Path::Tiny" : "0",
             "Scalar::Util" : "0",
             "Test::CheckDeps" : "0.002",
             "Test::Fatal" : "0.003",
@@ -71,47 +70,47 @@
    "provides" : {
       "MooseX::Getopt" : {
          "file" : "lib/MooseX/Getopt.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::Basic" : {
          "file" : "lib/MooseX/Getopt/Basic.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::Dashes" : {
          "file" : "lib/MooseX/Getopt/Dashes.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::GLD" : {
          "file" : "lib/MooseX/Getopt/GLD.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::Meta::Attribute" : {
          "file" : "lib/MooseX/Getopt/Meta/Attribute.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::Meta::Attribute::NoGetopt" : {
          "file" : "lib/MooseX/Getopt/Meta/Attribute/NoGetopt.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::Meta::Attribute::Trait" : {
          "file" : "lib/MooseX/Getopt/Meta/Attribute/Trait.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::Meta::Attribute::Trait::NoGetopt" : {
          "file" : "lib/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::OptionTypeMap" : {
          "file" : "lib/MooseX/Getopt/OptionTypeMap.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::ProcessedArgv" : {
          "file" : "lib/MooseX/Getopt/ProcessedArgv.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       },
       "MooseX::Getopt::Strict" : {
          "file" : "lib/MooseX/Getopt/Strict.pm",
-         "version" : "0.51"
+         "version" : "0.52"
       }
    },
    "release_status" : "stable",
@@ -127,7 +126,7 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/MooseX-Getopt.git;a=summary"
       }
    },
-   "version" : "0.51",
+   "version" : "0.52",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016002"

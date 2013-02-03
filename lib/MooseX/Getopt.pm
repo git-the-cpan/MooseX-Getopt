@@ -1,11 +1,11 @@
 package MooseX::Getopt;
-# git description: v0.50-1-gb54d5bf
+# git description: v0.51-1-ge202fd4
 
 BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::VERSION = '0.51';
+  $MooseX::Getopt::VERSION = '0.52';
 }
 # ABSTRACT: A Moose role for processing command line options
 
