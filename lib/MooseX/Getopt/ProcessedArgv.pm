@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::ProcessedArgv::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::ProcessedArgv::VERSION = '0.52';
+  $MooseX::Getopt::ProcessedArgv::VERSION = '0.53';
 }
 use Moose;
 # ABSTRACT: MooseX::Getopt::ProcessedArgv - Class containing the results of process_argv

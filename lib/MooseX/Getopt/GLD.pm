@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::GLD::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::GLD::VERSION = '0.52';
+  $MooseX::Getopt::GLD::VERSION = '0.53';
 }
 # ABSTRACT: A Moose role for processing command line options with Getopt::Long::Descriptive
 
@@ -130,7 +130,7 @@ MooseX::Getopt::GLD - A Moose role for processing command line options with Geto
 
 This role is a parameterized role. It accepts one configuration parameter,
 C<getopt_conf>. This parameter is an ArrayRef of strings, which are
-L<Getopt::Long> configuraion options (see "Configuring Getopt::Long" in
+L<Getopt::Long> configuration options (see "Configuring Getopt::Long" in
 L<Getopt::Long>)
 
 =head1 AUTHORS

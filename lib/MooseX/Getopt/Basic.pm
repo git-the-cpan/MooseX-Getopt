@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.52';
+  $MooseX::Getopt::Basic::VERSION = '0.53';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -13,6 +13,7 @@ use MooseX::Getopt::OptionTypeMap;
 use MooseX::Getopt::Meta::Attribute;
 use MooseX::Getopt::Meta::Attribute::NoGetopt;
 use MooseX::Getopt::ProcessedArgv;
+use Try::Tiny;
 use Carp ();
 
 use Getopt::Long 2.37 ();
@@ -52,12 +53,12 @@ sub process_argv {
                 $configfile = &$configfile($class);
             }
             if (defined $configfile) {
-                $config_from_file = eval {
+                $config_from_file = try {
                     $class->get_config_from_file($configfile);
-                };
-                if ($@) {
-                    die $@ unless $@ =~ /Specified configfile '\Q$configfile\E' does not exist/;
                 }
+                catch {
+                    die $_ unless /Specified configfile '\Q$configfile\E' does not exist/;
+                };
             }
         }
         else {
@@ -118,14 +119,16 @@ sub _parse_argv {
     my $argv_copy = [ @ARGV ];
 
     my @warnings;
-    my ( $parsed_options, $usage ) = eval {
+    my ( $parsed_options, $usage ) = try {
         local $SIG{__WARN__} = sub { push @warnings, @_ };
 
         return $class->_getopt_get_options(\%params, $opt_spec);
+    }
+    catch {
+        $class->_getopt_spec_exception(\@warnings, $_);
     };
 
     $class->_getopt_spec_warnings(@warnings) if @warnings;
-    $class->_getopt_spec_exception(\@warnings, $@) if $@;
 
     # Get a copy of the Getopt::Long-mangled @ARGV
     my $argv_mangled = [ @ARGV ];
