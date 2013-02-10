@@ -1,12 +1,15 @@
 use strict;
 use warnings;
 
-use Test::Requires { 'MooseX::ConfigFromFile' => '0.06' };    # skip all if not installed
-use Test::More tests => 38;
+use Test::Requires 'MooseX::ConfigFromFile';    # skip all if not installed
+use Test::More tests => 56;
 use Test::Fatal;
+use Test::Deep '!blessed';
 use Path::Tiny;
+use Scalar::Util 'blessed';
 use Test::NoWarnings 1.04 ':early';
 
+my %constructor_args;
 {
     package App;
 
@@ -47,13 +50,19 @@ use Test::NoWarnings 1.04 ':early';
             optional_from_config => 'from_config_2',
         );
 
-        my $cpath = Path::Tiny::path('/notused/default');
-        if ( $file ne $cpath ) {
+        if ( $file ne Path::Tiny::path('/notused/default') ) {
             $config{config_from_override} = 1;
         }
 
         return \%config;
     }
+
+    around BUILDARGS => sub
+    {
+        my ($orig, $class) = (shift, shift);
+        my $args = $class->$orig(@_);
+        $constructor_args{$class} = $args;
+    };
 }
 
 {
@@ -74,9 +83,19 @@ use Test::NoWarnings 1.04 ':early';
     extends 'App';
 
     has '+configfile' => (
-        default => sub { return Path::Tiny::path('/notused/default') },
+        default => sub { return Path::Tiny::path('/notused/default')->stringify },
     );
 }
+
+{
+    package App::ConfigFileWrapped;
+
+    use Moose;
+    extends 'App';
+
+    sub _get_default_configfile { '/notused/default' }
+}
+
 
 # No config specified
 {
@@ -97,6 +116,14 @@ use Test::NoWarnings 1.04 ':early';
 
         is( $app->configfile, path('/notused/default'),
             '... configfile is /notused/default as expected' );
+
+        cmp_deeply(
+            $constructor_args{blessed($app)},
+            superhashof({
+                configfile => str(path('/notused/default')),
+            }),
+            'correct constructor args passed',
+        );
     }
 
     {
@@ -109,12 +136,44 @@ use Test::NoWarnings 1.04 ':early';
 
         is( $app->configfile, path('/notused/default'),
             '... configfile is /notused/default as expected' );
+
+        cmp_deeply(
+            $constructor_args{blessed $app},
+            superhashof({
+                configfile => str(path('/notused/default')),
+            }),
+            'correct constructor args passed',
+        );
+    }
+
+    SKIP: {
+        eval "use MooseX::ConfigFromFile 0.08 (); 1;";
+        diag("MooseX::ConfigFromFile 0.08 needed to test this use of configfile defaults"),
+        skip "MooseX::ConfigFromFile 0.08 needed to test this use of configfile defaults", 7 if $@;
+
+        my $app = App::ConfigFileWrapped->new_with_options;
+        isa_ok( $app, 'App::ConfigFileWrapped' );
+        app_ok( $app );
+
+        ok(  !$app->config_from_override,
+            '... config_from_override false as expected' );
+
+        is( $app->configfile, path('/notused/default'),
+            '... configfile is /notused/default as expected' );
+
+        cmp_deeply(
+            $constructor_args{blessed $app},
+            superhashof({
+                configfile => str(path('/notused/default')),
+            }),
+            'correct constructor args passed',
+        );
     }
 }
 
 # Config specified
 {
-    local @ARGV = qw( --configfile /notused --required_from_argv 1 );
+    local @ARGV = qw( --configfile /notused/override --required_from_argv 1 );
 
     {
         my $app = App->new_with_options;
@@ -130,8 +189,16 @@ use Test::NoWarnings 1.04 ':early';
         ok( $app->config_from_override,
              '... config_from_override true as expected' );
 
-        is( $app->configfile, path('/notused'),
-            '... configfile is /notused as expected' );
+        is( $app->configfile, path('/notused/override'),
+            '... configfile is /notused/override as expected' );
+
+        cmp_deeply(
+            $constructor_args{blessed $app},
+            superhashof({
+                configfile => str(path('/notused/override')),
+            }),
+            'correct constructor args passed',
+        );
     }
     {
         my $app = App::DefaultConfigFileCodeRef->new_with_options;
@@ -141,14 +208,41 @@ use Test::NoWarnings 1.04 ':early';
         ok( $app->config_from_override,
              '... config_from_override true as expected' );
 
-        is( $app->configfile, path('/notused'),
+        is( $app->configfile, path('/notused/override'),
+            '... configfile is /notused/override as expected' );
+
+        cmp_deeply(
+            $constructor_args{blessed $app},
+            superhashof({
+                configfile => str(path('/notused/override')),
+            }),
+            'correct constructor args passed',
+        );
+    }
+    {
+        my $app = App::ConfigFileWrapped->new_with_options;
+        isa_ok( $app, 'App::ConfigFileWrapped' );
+        app_ok( $app );
+
+        ok( $app->config_from_override,
+             '... config_from_override true as expected' );
+
+        is( $app->configfile, path('/notused/override'),
             '... configfile is /notused as expected' );
+
+        cmp_deeply(
+            $constructor_args{blessed $app},
+            superhashof({
+                configfile => str(path('/notused/override')),
+            }),
+            'correct constructor args passed',
+        );
     }
 }
 
 # Required arg not supplied from cmdline
 {
-    local @ARGV = qw( --configfile /notused );
+    local @ARGV = qw( --configfile /notused/override );
     like exception { App->new_with_options },
         ($Getopt::Long::Descriptive::VERSION >= 0.091
             ? qr/Mandatory parameter 'required_from_argv' missing/
@@ -157,7 +251,7 @@ use Test::NoWarnings 1.04 ':early';
 
 # Config file value overriden from cmdline
 {
-    local @ARGV = qw( --configfile /notused --required_from_argv 1 --required_from_config override );
+    local @ARGV = qw( --configfile /notused/override --required_from_argv 1 --required_from_config override );
 
     my $app = App->new_with_options;
     isa_ok( $app, 'App' );

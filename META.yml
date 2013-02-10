@@ -15,20 +15,26 @@ author:
   - 'Jonathan Swartz <swartz@pobox.com>'
 build_requires:
   Config::Any::YAML: 0
+  File::Find: 0
+  File::Temp: 0
+  Moose::Meta::Class: 0
   Path::Tiny: 0
   Scalar::Util: 0
   Test::CheckDeps: 0.002
+  Test::Deep: 0
   Test::Fatal: 0.003
   Test::Moose: 0
   Test::More: 0.88
   Test::NoWarnings: 1.04
-  Test::Requires: 0.05
+  Test::Requires: 0
   Test::Trap: 0
   Test::Warn: 0.21
+  strict: 0
+  warnings: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -37,164 +43,120 @@ name: MooseX-Getopt
 provides:
   MooseX::Getopt:
     file: lib/MooseX/Getopt.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::Basic:
     file: lib/MooseX/Getopt/Basic.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::Dashes:
     file: lib/MooseX/Getopt/Dashes.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::GLD:
     file: lib/MooseX/Getopt/GLD.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::Meta::Attribute:
     file: lib/MooseX/Getopt/Meta/Attribute.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::Meta::Attribute::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/NoGetopt.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::Meta::Attribute::Trait:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::Meta::Attribute::Trait::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::OptionTypeMap:
     file: lib/MooseX/Getopt/OptionTypeMap.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::ProcessedArgv:
     file: lib/MooseX/Getopt/ProcessedArgv.pm
-    version: 0.53
+    version: 0.54
   MooseX::Getopt::Strict:
     file: lib/MooseX/Getopt/Strict.pm
-    version: 0.53
+    version: 0.54
 requires:
+  Carp: 0
   Getopt::Long: 2.37
   Getopt::Long::Descriptive: 0.081
-  Moose: 0.56
+  Moose: 0
+  Moose::Meta::Attribute: 0
+  Moose::Role: 0.56
+  Moose::Util::TypeConstraints: 0
   MooseX::Role::Parameterized: 0
+  Try::Tiny: 0
   perl: 5.006
 resources:
-  bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Getopt
-  homepage: http://metacpan.org/release/MooseX-Getopt
+  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Getopt
   repository: git://git.moose.perl.org/MooseX-Getopt.git
-version: 0.53
+version: 0.54
 x_Dist_Zilla:
   perl:
     version: 5.016002
   plugins:
     -
+      class: Dist::Zilla::Plugin::MetaResources
+      name: MetaResources
+      version: 4.300030
+    -
       class: Dist::Zilla::Plugin::GatherDir
-      name: '@FLORA/@Basic/GatherDir'
-      version: 4.300029
+      name: '@Basic/GatherDir'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::PruneCruft
-      name: '@FLORA/@Basic/PruneCruft'
-      version: 4.300029
+      name: '@Basic/PruneCruft'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::ManifestSkip
-      name: '@FLORA/@Basic/ManifestSkip'
-      version: 4.300029
+      name: '@Basic/ManifestSkip'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::MetaYAML
-      name: '@FLORA/@Basic/MetaYAML'
-      version: 4.300029
+      name: '@Basic/MetaYAML'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::License
-      name: '@FLORA/@Basic/License'
-      version: 4.300029
+      name: '@Basic/License'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::Readme
-      name: '@FLORA/@Basic/Readme'
-      version: 4.300029
+      name: '@Basic/Readme'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::ExtraTests
-      name: '@FLORA/@Basic/ExtraTests'
-      version: 4.300029
+      name: '@Basic/ExtraTests'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::ExecDir
-      name: '@FLORA/@Basic/ExecDir'
-      version: 4.300029
+      name: '@Basic/ExecDir'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::ShareDir
-      name: '@FLORA/@Basic/ShareDir'
-      version: 4.300029
+      name: '@Basic/ShareDir'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::MakeMaker
-      name: '@FLORA/@Basic/MakeMaker'
-      version: 4.300029
+      name: '@Basic/MakeMaker'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::Manifest
-      name: '@FLORA/@Basic/Manifest'
-      version: 4.300029
+      name: '@Basic/Manifest'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::TestRelease
-      name: '@FLORA/@Basic/TestRelease'
-      version: 4.300029
+      name: '@Basic/TestRelease'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
-      name: '@FLORA/@Basic/ConfirmRelease'
-      version: 4.300029
+      name: '@Basic/ConfirmRelease'
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
-      name: '@FLORA/@Basic/UploadToCPAN'
-      version: 4.300029
+      name: '@Basic/UploadToCPAN'
+      version: 4.300030
     -
-      class: Dist::Zilla::Plugin::MetaConfig
-      name: '@FLORA/MetaConfig'
-      version: 4.300029
-    -
-      class: Dist::Zilla::Plugin::MetaJSON
-      name: '@FLORA/MetaJSON'
-      version: 4.300029
-    -
-      class: Dist::Zilla::Plugin::PkgVersion
-      name: '@FLORA/PkgVersion'
-      version: 4.300029
-    -
-      class: Dist::Zilla::Plugin::PodSyntaxTests
-      name: '@FLORA/PodSyntaxTests'
-      version: 4.300029
-    -
-      class: Dist::Zilla::Plugin::NoTabsTests
-      name: '@FLORA/NoTabsTests'
-      version: 0.01
-    -
-      class: Dist::Zilla::Plugin::PodCoverageTests
-      name: '@FLORA/PodCoverageTests'
-      version: 4.300029
-    -
-      class: Dist::Zilla::Plugin::MetaResources
-      name: '@FLORA/MetaResources'
-      version: 4.300029
-    -
-      class: Dist::Zilla::Plugin::Authority
-      name: '@FLORA/Authority'
-      version: 1.006
-    -
-      class: Dist::Zilla::Plugin::EOLTests
-      name: '@FLORA/EOLTests'
-      version: 0.02
-    -
-      class: Dist::Zilla::Plugin::PodWeaver
-      name: '@FLORA/PodWeaver'
-      version: 3.101641
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: runtime
-          type: requires
-      name: Prereqs
-      version: 4.300029
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: test
-          type: requires
-      name: TestRequires
-      version: 4.300029
+      class: Dist::Zilla::Plugin::AutoPrereqs
+      name: AutoPrereqs
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -202,7 +164,7 @@ x_Dist_Zilla:
           phase: test
           type: recommends
       name: TestRecommends
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::InstallGuide
       name: InstallGuide
@@ -210,7 +172,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: MetaConfig
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::MetaProvides::Package
       name: MetaProvides::Package
@@ -223,6 +185,38 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::MinimumPerl
       name: MinimumPerl
       version: 1.003
+    -
+      class: Dist::Zilla::Plugin::MetaJSON
+      name: MetaJSON
+      version: 4.300030
+    -
+      class: Dist::Zilla::Plugin::PkgVersion
+      name: PkgVersion
+      version: 4.300030
+    -
+      class: Dist::Zilla::Plugin::Authority
+      name: Authority
+      version: 1.006
+    -
+      class: Dist::Zilla::Plugin::PodWeaver
+      name: PodWeaver
+      version: 3.101641
+    -
+      class: Dist::Zilla::Plugin::PodSyntaxTests
+      name: PodSyntaxTests
+      version: 4.300030
+    -
+      class: Dist::Zilla::Plugin::PodCoverageTests
+      name: PodCoverageTests
+      version: 4.300030
+    -
+      class: Dist::Zilla::Plugin::NoTabsTests
+      name: NoTabsTests
+      version: 0.01
+    -
+      class: Dist::Zilla::Plugin::EOLTests
+      name: EOLTests
+      version: 0.02
     -
       class: Dist::Zilla::Plugin::Test::DistManifest
       name: Test::DistManifest
@@ -238,7 +232,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaTests
       name: MetaTests
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::Test::CPAN::Changes
       name: Test::CPAN::Changes
@@ -278,27 +272,27 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: Git::Check
-      version: 2.006
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: Git::NextVersion
-      version: 2.006
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: NextRelease
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: Git::Commit
-      version: 2.006
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: Git::Tag
-      version: 2.006
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::Git::Push
       name: Git::Push
-      version: 2.006
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::InstallRelease
       name: InstallRelease
@@ -310,30 +304,30 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':IncModules'
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':TestFiles'
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ExecFiles'
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ShareFiles'
-      version: 4.300029
+      version: 4.300030
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':MainModule'
-      version: 4.300029
+      version: 4.300030
   zilla:
     class: Dist::Zilla::Dist::Builder
     config:
       is_trial: 0
-    version: 4.300029
+    version: 4.300030
 x_authority: cpan:STEVAN

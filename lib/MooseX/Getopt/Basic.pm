@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.53';
+  $MooseX::Getopt::Basic::VERSION = '0.54';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -37,21 +37,25 @@ sub process_argv {
         $opt_parser->getoptions( "configfile=s" => \$configfile );
 
         my $cfmeta = $class->meta->find_attribute_by_name('configfile');
+        my $init_arg = $cfmeta->init_arg;
 
         # was it passed to the constructor?
         if (!defined $configfile)
         {
-            my $key = $cfmeta->init_arg;
-            $configfile = $constructor_params->{$key} if $key;
+            $configfile = $constructor_params->{$init_arg} if defined $init_arg;
         }
 
         if(!defined $configfile) {
-            $configfile = $cfmeta->default if $cfmeta->has_default;
-            if (ref $configfile eq 'CODE') {
-                # not sure theres a lot you can do with the class and may break some assumptions
-                # warn?
-                $configfile = &$configfile($class);
-            }
+            # this is a classic legacy usecase documented in
+            # MooseX::ConfigFromFile that we should continue to support
+            $configfile = try { $class->configfile };
+
+            $configfile = $cfmeta->default
+                if not defined $configfile and $cfmeta->has_default;
+
+            # note that this will die horribly if the default sub depends on
+            # other attributes
+            $configfile = $configfile->($class) if ref $configfile eq 'CODE';
             if (defined $configfile) {
                 $config_from_file = try {
                     $class->get_config_from_file($configfile);
@@ -60,6 +64,9 @@ sub process_argv {
                     die $_ unless /Specified configfile '\Q$configfile\E' does not exist/;
                 };
             }
+
+            $constructor_params->{$init_arg} = $configfile
+                if defined $configfile and defined $init_arg;
         }
         else {
             $config_from_file = $class->get_config_from_file($configfile);
