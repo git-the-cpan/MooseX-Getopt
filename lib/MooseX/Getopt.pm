@@ -3,9 +3,9 @@ BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::VERSION = '0.54';
+  $MooseX::Getopt::VERSION = '0.55';
 }
-# git description: v0.53-12-gd2243a7
+# git description: v0.54-3-ge39374b
 
 # ABSTRACT: A Moose role for processing command line options
 

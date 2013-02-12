@@ -43,37 +43,37 @@ name: MooseX-Getopt
 provides:
   MooseX::Getopt:
     file: lib/MooseX/Getopt.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::Basic:
     file: lib/MooseX/Getopt/Basic.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::Dashes:
     file: lib/MooseX/Getopt/Dashes.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::GLD:
     file: lib/MooseX/Getopt/GLD.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::Meta::Attribute:
     file: lib/MooseX/Getopt/Meta/Attribute.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::Meta::Attribute::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/NoGetopt.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::Meta::Attribute::Trait:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::Meta::Attribute::Trait::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::OptionTypeMap:
     file: lib/MooseX/Getopt/OptionTypeMap.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::ProcessedArgv:
     file: lib/MooseX/Getopt/ProcessedArgv.pm
-    version: 0.54
+    version: 0.55
   MooseX::Getopt::Strict:
     file: lib/MooseX/Getopt/Strict.pm
-    version: 0.54
+    version: 0.55
 requires:
   Carp: 0
   Getopt::Long: 2.37
@@ -88,7 +88,7 @@ requires:
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Getopt
   repository: git://git.moose.perl.org/MooseX-Getopt.git
-version: 0.54
+version: 0.55
 x_Dist_Zilla:
   perl:
     version: 5.016002
@@ -224,7 +224,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Compile
       name: Test::Compile
-      version: 1.112820
+      version: 2.000
     -
       class: Dist::Zilla::Plugin::Test::MinimumVersion
       name: Test::MinimumVersion
