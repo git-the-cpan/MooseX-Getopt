@@ -16,7 +16,7 @@ my %WriteMakefileArgs = (
     "File::Find" => 0,
     "File::Temp" => 0,
     "Moose::Meta::Class" => 0,
-    "Path::Tiny" => 0,
+    "Path::Tiny" => "0.009",
     "Scalar::Util" => 0,
     "Test::CheckDeps" => "0.002",
     "Test::Deep" => 0,
@@ -48,7 +48,7 @@ my %WriteMakefileArgs = (
     "MooseX::Role::Parameterized" => 0,
     "Try::Tiny" => 0
   },
-  "VERSION" => "0.55",
+  "VERSION" => "0.56",
   "test" => {
     "TESTS" => "t/*.t"
   }
