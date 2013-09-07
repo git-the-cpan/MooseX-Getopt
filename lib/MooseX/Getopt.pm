@@ -3,9 +3,9 @@ BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::VERSION = '0.56';
+  $MooseX::Getopt::VERSION = '0.57';
 }
-# git description: v0.55-1-ga457632
+# git description: v0.56-17-g8fc1efe
 
 # ABSTRACT: A Moose role for processing command line options
 
@@ -244,7 +244,7 @@ B<Important>: By default, L<Getopt::Long> will reject unrecognized I<options>
 (that is, options that do not correspond with attributes using the Getopt
 trait). To disable this, and allow options to also be saved in C<extra_argv> (for example to pass along to another class's C<new_with_options>), you can either enable the
 C<pass_through> option of L<Getopt::Long> for your class:  C<< use Getopt::Long
-qw(:config pass_through); >> or specify a value for for L<MooseX::Getopt::GLD>'s C<getopt_conf> parameter.
+qw(:config pass_through); >> or specify a value for L<MooseX::Getopt::GLD>'s C<getopt_conf> parameter.
 
 =head2 B<usage>
 
@@ -281,6 +281,10 @@ C<new_with_options>.
 See L<Getopt::Long/Configuring Getopt::Long> for many other customizations you
 can make to how options are parsed. Simply C<use Getopt::Long qw(:config
 other_options...)> in your class to set these.
+
+=head1 SEE ALSO
+
+L<MooseX::Getopt::Usage>, an extension to generate man pages, with colour
 
 =head1 AUTHORS
 

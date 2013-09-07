@@ -3,10 +3,12 @@ BEGIN {
   $MooseX::Getopt::GLD::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::GLD::VERSION = '0.56';
+  $MooseX::Getopt::GLD::VERSION = '0.57';
 }
 # ABSTRACT: A Moose role for processing command line options with Getopt::Long::Descriptive
 
+use strict;
+use warnings;
 use MooseX::Role::Parameterized;
 
 use Getopt::Long::Descriptive 0.081;

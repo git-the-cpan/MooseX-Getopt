@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.56';
+  $MooseX::Getopt::Basic::VERSION = '0.57';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -185,7 +185,7 @@ sub _usage_format {
 sub _traditional_spec {
     my ( $class, %params ) = @_;
 
-    my ( @options, %name_to_init_arg, %options );
+    my ( @options, %name_to_init_arg );
 
     foreach my $opt ( @{ $params{options} } ) {
         push @options, $opt->{opt_string};

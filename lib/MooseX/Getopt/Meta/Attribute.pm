@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::VERSION = '0.56';
+  $MooseX::Getopt::Meta::Attribute::VERSION = '0.57';
 }
 # ABSTRACT: Optional meta attribute for custom option names
 
@@ -72,7 +72,7 @@ now it works for those who might need such a feature.
 
 You should rarely need to explicitly set the attribute metaclass. It is much
 preferred to simply provide a trait (a role applied to the attribute
-metaclass), which allows other code to futher modify the attribute by applying
+metaclass), which allows other code to further modify the attribute by applying
 additional roles.
 
 Therefore, you should first try to do this:
