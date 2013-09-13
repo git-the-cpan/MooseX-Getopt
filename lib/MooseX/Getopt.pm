@@ -3,9 +3,9 @@ BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::VERSION = '0.57';
+  $MooseX::Getopt::VERSION = '0.58';
 }
-# git description: v0.56-17-g8fc1efe
+# git description: v0.57-7-g4d36947
 
 # ABSTRACT: A Moose role for processing command line options
 
@@ -23,9 +23,20 @@ __END__
 
 =encoding utf-8
 
+=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
+Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
+Hepler Tomas Doran Yuval Prather Kogman t0m Ævar Arnfjörð Bjarmason Dagfinn
+Ilmari Mannsåker Damien Krotkine
+
 =head1 NAME
 
 MooseX::Getopt - A Moose role for processing command line options
+
+=head1 VERSION
+
+version 0.58
 
 =head1 SYNOPSIS
 
@@ -286,59 +297,9 @@ other_options...)> in your class to set these.
 
 L<MooseX::Getopt::Usage>, an extension to generate man pages, with colour
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Stevan Little <stevan@iinteractive.com>
-
-=item *
-
-Brandon L. Black <blblack@gmail.com>
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
-
-=item *
-
-Ryan D Johnson <ryan@innerfence.com>
-
-=item *
-
-Drew Taylor <drew@drewtaylor.com>
-
-=item *
-
-Tomas Doran <bobtfish@bobtfish.net>
-
-=item *
-
-Florian Ragwitz <rafl@debian.org>
-
-=item *
-
-Dagfinn Ilmari MannsÃ¥ker <ilmari@ilmari.org>
-
-=item *
-
-Ã†var ArnfjÃ¶rÃ° Bjarmason <avar@cpan.org>
-
-=item *
-
-Chris Prather <perigrin@cpan.org>
-
-=item *
-
-Karen Etheridge <ether@cpan.org>
-
-=item *
-
-Jonathan Swartz <swartz@pobox.com>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 
@@ -346,5 +307,111 @@ This software is copyright (c) 2013 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Brandon L Black <blblack@gmail.com>
+
+=item *
+
+Chris Prather <chris@prather.org>
+
+=item *
+
+Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+
+=item *
+
+Damien Krotkine <dkrotkine@weborama.com>
+
+=item *
+
+Devin Austin <devin@devin-laptop.(none)>
+
+=item *
+
+Drew Taylor <drew@drewtaylor.com>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Gordon Irving <goraxe@goraxe.me.uk>
+
+=item *
+
+Hans Dieter Pearcey <hdp@weftsoar.net>
+
+=item *
+
+Hinrik Örn Sigurðsson <hinrik.sig@gmail.com>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+John Goulah <jgoulah@cpan.org>
+
+=item *
+
+Jonathan Swartz <swartz@pobox.com>
+
+=item *
+
+Justin Hunter <justin.d.hunter@gmail.com>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Nelo Onyiah <nelo.onyiah@gmail.com>
+
+=item *
+
+Ricardo SIGNES <rjbs@cpan.org>
+
+=item *
+
+Ryan D Johnson <ryan@innerfence.com>
+
+=item *
+
+Shlomi Fish <shlomif@iglu.org.il>
+
+=item *
+
+Stevan Little <stevan.little@iinteractive.com>
+
+=item *
+
+Todd Hepler <thepler@employees.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=item *
+
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+t0m <bobtfish@bobtfish.net>
+
+=item *
+
+Ævar Arnfjörð Bjarmason <avarab@gmail.com>
+
+=back
 
 =cut

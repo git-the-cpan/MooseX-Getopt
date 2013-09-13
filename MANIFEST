@@ -20,7 +20,6 @@ lib/MooseX/Getopt/ProcessedArgv.pm
 lib/MooseX/Getopt/Strict.pm
 t/00-check-deps.t
 t/00-compile.t
-t/000_load.t
 t/001_basic.t
 t/002_custom_option_type.t
 t/003_inferred_option_type.t
@@ -47,13 +46,13 @@ t/110_sort_usage_by_attr_order.t
 t/111_gld_pass_through.t
 t/112_configfile_constructor_arg.t
 t/112_configfile_constructor_arg.yml
+weaver.ini
 xt/release/changes_has_content.t
 xt/release/cpan-changes.t
 xt/release/distmeta.t
 xt/release/eol.t
 xt/release/kwalitee.t
 xt/release/minimum-version.t
-xt/release/mojibake.t
 xt/release/no-tabs.t
 xt/release/pod-coverage.t
 xt/release/pod-no404s.t

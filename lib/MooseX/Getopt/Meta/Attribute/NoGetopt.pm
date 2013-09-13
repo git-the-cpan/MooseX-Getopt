@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.57';
+  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.58';
 }
 # ABSTRACT: Optional meta attribute for ignoring params
 
@@ -27,9 +27,15 @@ __END__
 
 =encoding utf-8
 
+=for :stopwords Stevan Little Infinity Interactive, Inc
+
 =head1 NAME
 
 MooseX::Getopt::Meta::Attribute::NoGetopt - Optional meta attribute for ignoring params
+
+=head1 VERSION
+
+version 0.58
 
 =head1 SYNOPSIS
 
@@ -73,59 +79,9 @@ use this as the B<NoGetopt> alias, like so:
 
   has 'foo' => (metaclass => 'NoGetopt', cmd_flag => 'f');
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Stevan Little <stevan@iinteractive.com>
-
-=item *
-
-Brandon L. Black <blblack@gmail.com>
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
-
-=item *
-
-Ryan D Johnson <ryan@innerfence.com>
-
-=item *
-
-Drew Taylor <drew@drewtaylor.com>
-
-=item *
-
-Tomas Doran <bobtfish@bobtfish.net>
-
-=item *
-
-Florian Ragwitz <rafl@debian.org>
-
-=item *
-
-Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
-
-=item *
-
-Ævar Arnfjörð Bjarmason <avar@cpan.org>
-
-=item *
-
-Chris Prather <perigrin@cpan.org>
-
-=item *
-
-Karen Etheridge <ether@cpan.org>
-
-=item *
-
-Jonathan Swartz <swartz@pobox.com>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

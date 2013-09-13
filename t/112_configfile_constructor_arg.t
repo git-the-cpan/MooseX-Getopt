@@ -4,15 +4,9 @@ use warnings FATAL => 'all';
 # respect the configfile value passed into the constructor.
 
 use Test::Requires 'MooseX::SimpleConfig';  # skip all if not installed
-use Test::More tests => 3;
-use Test::Warnings;
+use Test::More;
+use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
 use Path::Tiny 0.009;
-
-# avoid warning if all we have installed is YAML or YAML::Syck - the user will
-# see this eventually when he actually uses MooseX::SimpleConfig in his own
-# code
-use Config::Any::YAML;
-$Config::Any::YAML::NO_YAML_XS_WARNING = 1;
 
 {
     package Foo;
@@ -42,3 +36,4 @@ $Config::Any::YAML::NO_YAML_XS_WARNING = 1;
     );
 }
 
+done_testing;

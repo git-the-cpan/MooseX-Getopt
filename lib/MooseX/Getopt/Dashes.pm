@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Dashes::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Dashes::VERSION = '0.57';
+  $MooseX::Getopt::Dashes::VERSION = '0.58';
 }
 # ABSTRACT: convert underscores in attribute names to dashes
 
@@ -33,9 +33,20 @@ __END__
 
 =encoding utf-8
 
+=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
+Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
+Hepler Tomas Doran Yuval Prather Kogman t0m Ævar Arnfjörð Bjarmason Dagfinn
+Ilmari Mannsåker Damien Krotkine
+
 =head1 NAME
 
 MooseX::Getopt::Dashes - convert underscores in attribute names to dashes
+
+=head1 VERSION
+
+version 0.58
 
 =head1 SYNOPSIS
 
@@ -71,59 +82,9 @@ a L<cmd_flag|MooseX::Getopt::Meta::Attribute/METHODS> argument with
 the command flag you'd like for a given attribute. No underscore to
 dash replacement will be done on the C<cmd_flag>.
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Stevan Little <stevan@iinteractive.com>
-
-=item *
-
-Brandon L. Black <blblack@gmail.com>
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
-
-=item *
-
-Ryan D Johnson <ryan@innerfence.com>
-
-=item *
-
-Drew Taylor <drew@drewtaylor.com>
-
-=item *
-
-Tomas Doran <bobtfish@bobtfish.net>
-
-=item *
-
-Florian Ragwitz <rafl@debian.org>
-
-=item *
-
-Dagfinn Ilmari MannsÃ¥ker <ilmari@ilmari.org>
-
-=item *
-
-Ã†var ArnfjÃ¶rÃ° Bjarmason <avar@cpan.org>
-
-=item *
-
-Chris Prather <perigrin@cpan.org>
-
-=item *
-
-Karen Etheridge <ether@cpan.org>
-
-=item *
-
-Jonathan Swartz <swartz@pobox.com>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

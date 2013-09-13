@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::ProcessedArgv::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::ProcessedArgv::VERSION = '0.57';
+  $MooseX::Getopt::ProcessedArgv::VERSION = '0.58';
 }
 use Moose;
 # ABSTRACT: MooseX::Getopt::ProcessedArgv - Class containing the results of process_argv
@@ -26,9 +26,15 @@ __END__
 
 =encoding utf-8
 
+=for :stopwords Stevan Little Infinity Interactive, Inc
+
 =head1 NAME
 
 MooseX::Getopt::ProcessedArgv - MooseX::Getopt::ProcessedArgv - Class containing the results of process_argv
+
+=head1 VERSION
+
+version 0.58
 
 =head1 SYNOPSIS
 
@@ -71,59 +77,9 @@ Parameters passed to process_argv.
 
 Command-line parameters parsed out of C<@ARGV>.
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Stevan Little <stevan@iinteractive.com>
-
-=item *
-
-Brandon L. Black <blblack@gmail.com>
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
-
-=item *
-
-Ryan D Johnson <ryan@innerfence.com>
-
-=item *
-
-Drew Taylor <drew@drewtaylor.com>
-
-=item *
-
-Tomas Doran <bobtfish@bobtfish.net>
-
-=item *
-
-Florian Ragwitz <rafl@debian.org>
-
-=item *
-
-Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
-
-=item *
-
-Ævar Arnfjörð Bjarmason <avar@cpan.org>
-
-=item *
-
-Chris Prather <perigrin@cpan.org>
-
-=item *
-
-Karen Etheridge <ether@cpan.org>
-
-=item *
-
-Jonathan Swartz <swartz@pobox.com>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

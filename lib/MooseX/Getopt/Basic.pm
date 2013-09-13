@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $MooseX::Getopt::Basic::VERSION = '0.57';
+  $MooseX::Getopt::Basic::VERSION = '0.58';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
 
@@ -277,9 +277,20 @@ __END__
 
 =encoding utf-8
 
+=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
+Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
+Hepler Tomas Doran Yuval Prather Kogman t0m Ævar Arnfjörð Bjarmason Dagfinn
+Ilmari Mannsåker Damien Krotkine
+
 =head1 NAME
 
 MooseX::Getopt::Basic - MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
+
+=head1 VERSION
+
+version 0.58
 
 =head1 SYNOPSIS
 
@@ -322,59 +333,9 @@ See L<MooseX::Getopt/process_argv>.
 
 =for Pod::Coverage print_usage_text
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Stevan Little <stevan@iinteractive.com>
-
-=item *
-
-Brandon L. Black <blblack@gmail.com>
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
-
-=item *
-
-Ryan D Johnson <ryan@innerfence.com>
-
-=item *
-
-Drew Taylor <drew@drewtaylor.com>
-
-=item *
-
-Tomas Doran <bobtfish@bobtfish.net>
-
-=item *
-
-Florian Ragwitz <rafl@debian.org>
-
-=item *
-
-Dagfinn Ilmari MannsÃ¥ker <ilmari@ilmari.org>
-
-=item *
-
-Ã†var ArnfjÃ¶rÃ° Bjarmason <avar@cpan.org>
-
-=item *
-
-Chris Prather <perigrin@cpan.org>
-
-=item *
-
-Karen Etheridge <ether@cpan.org>
-
-=item *
-
-Jonathan Swartz <swartz@pobox.com>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 
