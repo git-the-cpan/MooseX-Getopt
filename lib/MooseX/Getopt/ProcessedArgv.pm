@@ -1,9 +1,9 @@
 package MooseX::Getopt::ProcessedArgv;
+{
+  $MooseX::Getopt::ProcessedArgv::VERSION = '0.59';
+}
 BEGIN {
   $MooseX::Getopt::ProcessedArgv::AUTHORITY = 'cpan:STEVAN';
-}
-{
-  $MooseX::Getopt::ProcessedArgv::VERSION = '0.58';
 }
 use Moose;
 # ABSTRACT: MooseX::Getopt::ProcessedArgv - Class containing the results of process_argv
@@ -24,7 +24,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Stevan Little Infinity Interactive, Inc
 
@@ -34,7 +34,7 @@ MooseX::Getopt::ProcessedArgv - MooseX::Getopt::ProcessedArgv - Class containing
 
 =head1 VERSION
 
-version 0.58
+version 0.59
 
 =head1 SYNOPSIS
 
@@ -83,7 +83,7 @@ Stevan Little <stevan@iinteractive.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

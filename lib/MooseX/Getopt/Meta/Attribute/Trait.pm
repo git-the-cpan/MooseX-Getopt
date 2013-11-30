@@ -1,9 +1,9 @@
 package MooseX::Getopt::Meta::Attribute::Trait;
+{
+  $MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.59';
+}
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::AUTHORITY = 'cpan:STEVAN';
-}
-{
-  $MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.58';
 }
 # ABSTRACT: Optional meta attribute trait for custom option names
 
@@ -45,9 +45,14 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc
+=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
+Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
+Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
+Ilmari Mannsåker Damien Krotkine
 
 =head1 NAME
 
@@ -55,7 +60,7 @@ MooseX::Getopt::Meta::Attribute::Trait - Optional meta attribute trait for custo
 
 =head1 VERSION
 
-version 0.58
+version 0.59
 
 =head1 SYNOPSIS
 
@@ -94,12 +99,12 @@ default one which L<MooseX::Getopt> will create for you.
 
 =head2 B<cmd_flag>
 
-Changes the commandline flag to be this value, instead of the default,
+Changes the command-line flag to be this value, instead of the default,
 which is the same as the attribute name.
 
 =head2 B<cmd_aliases>
 
-Adds more aliases for this commandline flag, useful for short options
+Adds more aliases for this command-line flag, useful for short options
 and such.
 
 =head2 B<has_cmd_flag>
@@ -112,7 +117,7 @@ Stevan Little <stevan@iinteractive.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

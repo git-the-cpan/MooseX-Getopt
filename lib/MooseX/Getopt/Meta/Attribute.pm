@@ -1,9 +1,9 @@
 package MooseX::Getopt::Meta::Attribute;
+{
+  $MooseX::Getopt::Meta::Attribute::VERSION = '0.59';
+}
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::AUTHORITY = 'cpan:STEVAN';
-}
-{
-  $MooseX::Getopt::Meta::Attribute::VERSION = '0.58';
 }
 # ABSTRACT: Optional meta attribute for custom option names
 
@@ -26,14 +26,14 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Ã–rn SigurÃ°sson
 Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
 Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman t0m Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+Hepler Tomas Doran Yuval Prather Kogman Ã†var ArnfjÃ¶rÃ° Bjarmason Dagfinn
+Ilmari MannsÃ¥ker Damien Krotkine
 
 =head1 NAME
 
@@ -41,7 +41,7 @@ MooseX::Getopt::Meta::Attribute - Optional meta attribute for custom option name
 
 =head1 VERSION
 
-version 0.58
+version 0.59
 
 =head1 SYNOPSIS
 
@@ -102,12 +102,12 @@ use this as the B<Getopt> alias, like so:
 
 =head2 B<cmd_flag>
 
-Changes the commandline flag to be this value, instead of the default,
+Changes the command-line flag to be this value, instead of the default,
 which is the same as the attribute name.
 
 =head2 B<cmd_aliases>
 
-Adds more aliases for this commandline flag, useful for short options
+Adds more aliases for this command-line flag, useful for short options
 and such.
 
 =head2 B<has_cmd_flag>
@@ -120,7 +120,7 @@ Stevan Little <stevan@iinteractive.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

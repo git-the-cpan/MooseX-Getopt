@@ -1,12 +1,12 @@
 package MooseX::Getopt;
+{
+  $MooseX::Getopt::VERSION = '0.59';
+}
+# git description: v0.58-10-g8ae1f12
+
 BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Getopt::VERSION = '0.58';
-}
-# git description: v0.57-7-g4d36947
-
 # ABSTRACT: A Moose role for processing command line options
 
 use Moose::Role 0.56;
@@ -21,14 +21,15 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Ã–rn SigurÃ°sson
 Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
 Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman t0m Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+Hepler Tomas Doran Yuval Prather Kogman Ã†var ArnfjÃ¶rÃ° Bjarmason Dagfinn
+Ilmari MannsÃ¥ker Damien Krotkine DWIM metaclass configfile Str subtype
+customizations
 
 =head1 NAME
 
@@ -36,7 +37,7 @@ MooseX::Getopt - A Moose role for processing command line options
 
 =head1 VERSION
 
-version 0.58
+version 0.59
 
 =head1 SYNOPSIS
 
@@ -67,22 +68,98 @@ version 0.58
 This is a role which provides an alternate constructor for creating
 objects using parameters passed in from the command line.
 
+=head1 METHODS
+
+=head2 C<< new_with_options (%params) >>
+
+This method will take a set of default C<%params> and then collect
+parameters from the command line (possibly overriding those in C<%params>)
+and then return a newly constructed object.
+
+The special parameter C<argv>, if specified should point to an array
+reference with an array to use instead of C<@ARGV>.
+
+If L<Getopt::Long/GetOptions> fails (due to invalid arguments),
+C<new_with_options> will throw an exception.
+
+If L<Getopt::Long::Descriptive> is installed and any of the following
+command line parameters are passed, the program will exit with usage
+information (and the option's state will be stored in the help_flag
+attribute). You can add descriptions for each option by including a
+B<documentation> option for each attribute to document.
+
+  -?
+  --?
+  -h
+  --help
+  --usage
+
+If you have L<Getopt::Long::Descriptive> the C<usage> parameter is also passed to
+C<new> as the usage option.
+
+=head2 C<ARGV>
+
+This accessor contains a reference to a copy of the C<@ARGV> array
+as it originally existed at the time of C<new_with_options>.
+
+=head2 C<extra_argv>
+
+This accessor contains an arrayref of leftover C<@ARGV> elements that
+L<Getopt::Long> did not parse.  Note that the real C<@ARGV> is left
+untouched.
+
+B<Important>: By default, L<Getopt::Long> will reject unrecognized I<options>
+(that is, options that do not correspond with attributes using the Getopt
+trait). To disable this, and allow options to also be saved in C<extra_argv> (for example to pass along to another class's C<new_with_options>), you can either enable the
+C<pass_through> option of L<Getopt::Long> for your class:  C<< use Getopt::Long
+qw(:config pass_through); >> or specify a value for L<MooseX::Getopt::GLD>'s C<getopt_conf> parameter.
+
+=head2 C<usage>
+
+This accessor contains the L<Getopt::Long::Descriptive::Usage> object (if
+L<Getopt::Long::Descriptive> is used).
+
+=head2 C<help_flag>
+
+This accessor contains the boolean state of the --help, --usage and --?
+options (true if any of these options were passed on the command line).
+
+=head2 C<print_usage_text>
+
+This method is called internally when the C<help_flag> state is true.
+It prints the text from the C<usage> object (see above) to C<stdout> and then the
+program terminates normally.  You can apply a method modification (see
+L<Moose::Manual::MethodModifiers>) if different behaviour is desired, for
+example to include additional text.
+
+=head2 C<meta>
+
+This returns the role meta object.
+
+=head2 C<process_argv (%params)>
+
+This does most of the work of C<new_with_options>, analyzing the parameters
+and C<argv>, except for actually calling the constructor. It returns a
+L<MooseX::Getopt::ProcessedArgv> object. C<new_with_options> uses this
+method internally, so modifying this method via subclasses/roles will affect
+C<new_with_options>.
+
 This module attempts to DWIM as much as possible with the command line
-params by introspecting your class's attributes. It will use the name
+parameters by introspecting your class's attributes. It will use the name
 of your attribute as the command line option, and if there is a type
 constraint defined, it will configure Getopt::Long to handle the option
 accordingly.
 
 You can use the trait L<MooseX::Getopt::Meta::Attribute::Trait> or the
 attribute metaclass L<MooseX::Getopt::Meta::Attribute> to get non-default
-commandline option names and aliases.
+command-line option names and aliases.
 
 You can use the trait L<MooseX::Getopt::Meta::Attribute::Trait::NoGetopt>
 or the attribute metaclass L<MooseX::Getopt::Meta::Attribute::NoGetopt>
-to have C<MooseX::Getopt> ignore your attribute in the commandline options.
+to have C<MooseX::Getopt> ignore your attribute in the command-line options.
 
 By default, attributes which start with an underscore are not given
-commandline argument support, unless the attribute's metaclass is set
+command-line argument support, unless the attribute's metaclass is set
 to L<MooseX::Getopt::Meta::Attribute>. If you don't want your accessors
 to have the leading underscore in their name, you can do this:
 
@@ -92,7 +169,7 @@ to have the leading underscore in their name, you can do this:
   # or for read-only attributes
   has '_bar' => (reader => 'bar', ...);
 
-This will mean that Getopt will not handle a --foo param, but your
+This will mean that Getopt will not handle a --foo parameter, but your
 code can still call the C<foo> method.
 
 If your class also uses a configfile-loading role based on
@@ -102,7 +179,7 @@ specified by the C<--configfile> option (or the default you've
 given for the configfile attribute) for you.
 
 Options specified in multiple places follow the following
-precedence order: commandline overrides configfile, which
+precedence order: command-line overrides configfile, which
 overrides explicit new_with_options parameters.
 
 =head2 Supported Type Constraints
@@ -211,82 +288,6 @@ type for it to the C<OptionTypeMap>, it would be treated just
 like a normal C<ArrayRef> type for Getopt purposes (that is,
 C<=s@>).
 
-=head1 METHODS
-
-=head2 B<new_with_options (%params)>
-
-This method will take a set of default C<%params> and then collect
-params from the command line (possibly overriding those in C<%params>)
-and then return a newly constructed object.
-
-The special parameter C<argv>, if specified should point to an array
-reference with an array to use instead of C<@ARGV>.
-
-If L<Getopt::Long/GetOptions> fails (due to invalid arguments),
-C<new_with_options> will throw an exception.
-
-If L<Getopt::Long::Descriptive> is installed and any of the following
-command line params are passed, the program will exit with usage
-information (and the option's state will be stored in the help_flag
-attribute). You can add descriptions for each option by including a
-B<documentation> option for each attribute to document.
-
-  -?
-  --?
-  -h
-  --help
-  --usage
-
-If you have L<Getopt::Long::Descriptive> the C<usage> param is also passed to
-C<new> as the usage option.
-
-=head2 B<ARGV>
-
-This accessor contains a reference to a copy of the C<@ARGV> array
-as it originally existed at the time of C<new_with_options>.
-
-=head2 B<extra_argv>
-
-This accessor contains an arrayref of leftover C<@ARGV> elements that
-L<Getopt::Long> did not parse.  Note that the real C<@ARGV> is left
-un-mangled.
-
-B<Important>: By default, L<Getopt::Long> will reject unrecognized I<options>
-(that is, options that do not correspond with attributes using the Getopt
-trait). To disable this, and allow options to also be saved in C<extra_argv> (for example to pass along to another class's C<new_with_options>), you can either enable the
-C<pass_through> option of L<Getopt::Long> for your class:  C<< use Getopt::Long
-qw(:config pass_through); >> or specify a value for L<MooseX::Getopt::GLD>'s C<getopt_conf> parameter.
-
-=head2 B<usage>
-
-This accessor contains the L<Getopt::Long::Descriptive::Usage> object (if
-L<Getopt::Long::Descriptive> is used).
-
-=head2 B<help_flag>
-
-This accessor contains the boolean state of the --help, --usage and --?
-options (true if any of these options were passed on the command line).
-
-=head2 B<print_usage_text>
-
-This method is called internally when the C<help_flag> state is true.
-It prints the text from the C<usage> object (see above) to stdout and then the
-program terminates normally.  You can apply a method modification (see
-L<Moose::Manual::MethodModifiers>) if different behaviour is desired, for
-example to include additional text.
-
-=head2 B<meta>
-
-This returns the role meta object.
-
-=head2 B<process_argv (%params)>
-
-This does most of the work of C<new_with_options>, analyzing the parameters
-and argv, except for actually calling the constructor. It returns a
-L<MooseX::Getopt::ProcessedArgv> object. C<new_with_options> uses this
-method internally, so modifying this method via subclasses/roles will affect
-C<new_with_options>.
-
 =head2 More Customization Options
 
 See L<Getopt::Long/Configuring Getopt::Long> for many other customizations you
@@ -303,7 +304,7 @@ Stevan Little <stevan@iinteractive.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
@@ -322,7 +323,7 @@ Chris Prather <chris@prather.org>
 
 =item *
 
-Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+Dagfinn Ilmari MannsÃ¥ker <ilmari@ilmari.org>
 
 =item *
 
@@ -350,7 +351,7 @@ Hans Dieter Pearcey <hdp@weftsoar.net>
 
 =item *
 
-Hinrik Örn Sigurðsson <hinrik.sig@gmail.com>
+Hinrik Ã–rn SigurÃ°sson <hinrik.sig@gmail.com>
 
 =item *
 
@@ -406,11 +407,7 @@ Yuval Kogman <nothingmuch@woobling.org>
 
 =item *
 
-t0m <bobtfish@bobtfish.net>
-
-=item *
-
-Ævar Arnfjörð Bjarmason <avarab@gmail.com>
+Ã†var ArnfjÃ¶rÃ° Bjarmason <avarab@gmail.com>
 
 =back
 

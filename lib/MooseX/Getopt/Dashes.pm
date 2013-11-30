@@ -1,9 +1,9 @@
 package MooseX::Getopt::Dashes;
+{
+  $MooseX::Getopt::Dashes::VERSION = '0.59';
+}
 BEGIN {
   $MooseX::Getopt::Dashes::AUTHORITY = 'cpan:STEVAN';
-}
-{
-  $MooseX::Getopt::Dashes::VERSION = '0.58';
 }
 # ABSTRACT: convert underscores in attribute names to dashes
 
@@ -31,14 +31,14 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Ã–rn SigurÃ°sson
 Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
 Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman t0m Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+Hepler Tomas Doran Yuval Prather Kogman Ã†var ArnfjÃ¶rÃ° Bjarmason Dagfinn
+Ilmari MannsÃ¥ker Damien Krotkine
 
 =head1 NAME
 
@@ -46,7 +46,7 @@ MooseX::Getopt::Dashes - convert underscores in attribute names to dashes
 
 =head1 VERSION
 
-version 0.58
+version 0.59
 
 =head1 SYNOPSIS
 
@@ -88,7 +88,7 @@ Stevan Little <stevan@iinteractive.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

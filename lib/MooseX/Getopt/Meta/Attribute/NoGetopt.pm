@@ -1,11 +1,11 @@
 package MooseX::Getopt::Meta::Attribute::NoGetopt;
+{
+  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.59';
+}
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
-{
-  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.58';
-}
-# ABSTRACT: Optional meta attribute for ignoring params
+# ABSTRACT: Optional meta attribute for ignoring parameters
 
 use Moose;
 
@@ -25,17 +25,22 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc
+=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
+Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
+Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
+Ilmari Mannsåker Damien Krotkine
 
 =head1 NAME
 
-MooseX::Getopt::Meta::Attribute::NoGetopt - Optional meta attribute for ignoring params
+MooseX::Getopt::Meta::Attribute::NoGetopt - Optional meta attribute for ignoring parameters
 
 =head1 VERSION
 
-version 0.58
+version 0.59
 
 =head1 SYNOPSIS
 
@@ -85,7 +90,7 @@ Stevan Little <stevan@iinteractive.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Infinity Interactive, Inc.
+This software is copyright (c) 2007 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
