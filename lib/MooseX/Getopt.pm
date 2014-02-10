@@ -1,19 +1,15 @@
 package MooseX::Getopt;
-{
-  $MooseX::Getopt::VERSION = '0.59';
-}
-# git description: v0.58-10-g8ae1f12
-
 BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
+# git description: v0.59-5-g5679633
+$MooseX::Getopt::VERSION = '0.60';
 # ABSTRACT: A Moose role for processing command line options
 
 use Moose::Role 0.56;
+use namespace::autoclean;
 
 with 'MooseX::Getopt::GLD';
-
-no Moose::Role;
 
 1;
 
@@ -37,7 +33,7 @@ MooseX::Getopt - A Moose role for processing command line options
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 SYNOPSIS
 

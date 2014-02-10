@@ -1,15 +1,12 @@
 package MooseX::Getopt::Dashes;
-{
-  $MooseX::Getopt::Dashes::VERSION = '0.59';
-}
 BEGIN {
   $MooseX::Getopt::Dashes::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: convert underscores in attribute names to dashes
-
+$MooseX::Getopt::Dashes::VERSION = '0.60';
 use Moose::Role;
-
 with 'MooseX::Getopt';
+use namespace::autoclean;
 
 around _get_cmd_flags_for_attr => sub {
     my $next = shift;
@@ -23,8 +20,6 @@ around _get_cmd_flags_for_attr => sub {
     return ( $flag, @aliases );
 };
 
-no Moose::Role;
-
 1;
 
 __END__
@@ -33,12 +28,7 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
-Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
-Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+=for :stopwords Stevan Little Infinity Interactive, Inc
 
 =head1 NAME
 
@@ -46,7 +36,7 @@ MooseX::Getopt::Dashes - convert underscores in attribute names to dashes
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 SYNOPSIS
 

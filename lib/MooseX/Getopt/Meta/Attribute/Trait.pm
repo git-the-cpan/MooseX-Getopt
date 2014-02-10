@@ -1,14 +1,12 @@
 package MooseX::Getopt::Meta::Attribute::Trait;
-{
-  $MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.59';
-}
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Optional meta attribute trait for custom option names
-
+$MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.60';
 use Moose::Role;
 use Moose::Util::TypeConstraints;
+use namespace::autoclean;
 
 has 'cmd_flag' => (
     is        => 'rw',
@@ -31,9 +29,6 @@ has 'cmd_aliases' => (
     coerce    => 1,
 );
 
-no Moose::Util::TypeConstraints;
-no Moose::Role;
-
 # register this as a metaclass alias ...
 package # stop confusing PAUSE
     Moose::Meta::Attribute::Custom::Trait::Getopt;
@@ -47,12 +42,7 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
-Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
-Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+=for :stopwords Stevan Little Infinity Interactive, Inc
 
 =head1 NAME
 
@@ -60,7 +50,7 @@ MooseX::Getopt::Meta::Attribute::Trait - Optional meta attribute trait for custo
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 SYNOPSIS
 

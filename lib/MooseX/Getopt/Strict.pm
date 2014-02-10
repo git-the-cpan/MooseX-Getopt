@@ -1,13 +1,11 @@
 package MooseX::Getopt::Strict;
-{
-  $MooseX::Getopt::Strict::VERSION = '0.59';
-}
 BEGIN {
   $MooseX::Getopt::Strict::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: only make options for attributes with the Getopt metaclass
-
+$MooseX::Getopt::Strict::VERSION = '0.60';
 use Moose::Role;
+use namespace::autoclean;
 
 with 'MooseX::Getopt';
 
@@ -18,8 +16,6 @@ around '_compute_getopt_attrs' => sub {
         $_->does("MooseX::Getopt::Meta::Attribute::Trait")
     } $class->$next(@args);
 };
-
-no Moose::Role;
 
 1;
 
@@ -37,7 +33,7 @@ MooseX::Getopt::Strict - only make options for attributes with the Getopt metacl
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 DESCRIPTION
 

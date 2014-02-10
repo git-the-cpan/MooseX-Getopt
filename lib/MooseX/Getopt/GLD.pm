@@ -1,19 +1,15 @@
 package MooseX::Getopt::GLD;
-{
-  $MooseX::Getopt::GLD::VERSION = '0.59';
-}
 BEGIN {
   $MooseX::Getopt::GLD::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: A Moose role for processing command line options with Getopt::Long::Descriptive
-
+$MooseX::Getopt::GLD::VERSION = '0.60';
 use strict;
 use warnings;
 use MooseX::Role::Parameterized;
-
 use Getopt::Long::Descriptive 0.081;
-
 with 'MooseX::Getopt::Basic';
+use namespace::autoclean;
 
 parameter getopt_conf => (
     isa => 'ArrayRef[Str]',
@@ -96,12 +92,7 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
-Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
-Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+=for :stopwords Stevan Little Infinity Interactive, Inc
 
 =head1 NAME
 
@@ -109,7 +100,7 @@ MooseX::Getopt::GLD - A Moose role for processing command line options with Geto
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 SYNOPSIS
 

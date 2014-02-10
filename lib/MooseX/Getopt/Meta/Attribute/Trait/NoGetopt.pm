@@ -1,14 +1,11 @@
 package MooseX::Getopt::Meta::Attribute::Trait::NoGetopt;
-{
-  $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.59';
-}
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Optional meta attribute trait for ignoring parameters
-
+$MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.60';
 use Moose::Role;
-no Moose::Role;
+use namespace::autoclean;
 
 # register this as a metaclass alias ...
 package # stop confusing PAUSE
@@ -36,7 +33,7 @@ MooseX::Getopt::Meta::Attribute::Trait::NoGetopt - Optional meta attribute trait
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 SYNOPSIS
 

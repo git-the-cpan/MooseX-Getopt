@@ -1,14 +1,14 @@
 package MooseX::Getopt::OptionTypeMap;
-{
-  $MooseX::Getopt::OptionTypeMap::VERSION = '0.59';
-}
 BEGIN {
   $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Storage for the option to type mappings
-
-use Moose 'confess', 'blessed';
+$MooseX::Getopt::OptionTypeMap::VERSION = '0.60';
+use Moose;
+use Carp 'confess';
+use Scalar::Util 'blessed';
 use Moose::Util::TypeConstraints 'find_type_constraint';
+use namespace::autoclean;
 
 my %option_type_map = (
     'Bool'     => '!',
@@ -91,9 +91,6 @@ sub add_option_type_to_map {
     $option_type_map{$type_name} = $option_string;
 }
 
-no Moose::Util::TypeConstraints;
-no Moose;
-
 1;
 
 __END__
@@ -102,12 +99,7 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
-Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
-Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+=for :stopwords Stevan Little Infinity Interactive, Inc
 
 =head1 NAME
 
@@ -115,7 +107,7 @@ MooseX::Getopt::OptionTypeMap - Storage for the option to type mappings
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 DESCRIPTION
 

@@ -1,18 +1,15 @@
 package MooseX::Getopt::Meta::Attribute::NoGetopt;
-{
-  $MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.59';
-}
 BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Optional meta attribute for ignoring parameters
-
+$MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.60';
 use Moose;
 
 extends 'Moose::Meta::Attribute'; # << Moose extending Moose :)
    with 'MooseX::Getopt::Meta::Attribute::Trait::NoGetopt';
 
-no Moose;
+use namespace::autoclean;
 
 # register this as a metaclass alias ...
 package # stop confusing PAUSE
@@ -27,12 +24,7 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
-Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
-Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
-Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
-Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
-Ilmari Mannsåker Damien Krotkine
+=for :stopwords Stevan Little Infinity Interactive, Inc
 
 =head1 NAME
 
@@ -40,7 +32,7 @@ MooseX::Getopt::Meta::Attribute::NoGetopt - Optional meta attribute for ignoring
 
 =head1 VERSION
 
-version 0.59
+version 0.60
 
 =head1 SYNOPSIS
 
