@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Strict::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: only make options for attributes with the Getopt metaclass
-$MooseX::Getopt::Strict::VERSION = '0.60';
+$MooseX::Getopt::Strict::VERSION = '0.61';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -33,7 +33,7 @@ MooseX::Getopt::Strict - only make options for attributes with the Getopt metacl
 
 =head1 VERSION
 
-version 0.60
+version 0.61
 
 =head1 DESCRIPTION
 

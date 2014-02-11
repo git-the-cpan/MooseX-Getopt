@@ -1,12 +1,12 @@
 use strict;
 use warnings;
 
-# this test was generated with Dist::Zilla::Plugin::Test::CheckBreaks 0.002
+# this test was generated with Dist::Zilla::Plugin::Test::CheckBreaks 0.004
 
 use Test::More;
 
 SKIP: {
-    eval 'require Moose::Conflicts; 1' and Moose::Conflicts->check_conflicts;
+    eval 'require Moose::Conflicts; Moose::Conflicts->check_conflicts';
     if ($INC{'Moose/Conflicts.pm'}) {
         diag $@ if $@;
         pass 'conflicts checked via Moose::Conflicts';

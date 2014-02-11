@@ -1,5 +1,9 @@
 Revision history for MooseX-Getopt
 
+0.61      2014-02-11 06:30:14Z
+ - fix potentially-broken check-breaks test when a conflicting module fails to
+   compile
+
 0.60      2014-02-10 02:21:05Z
  - avoid failing an optional test when YAML is not installed
 
