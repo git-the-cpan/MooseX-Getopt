@@ -54,7 +54,6 @@ weaver.ini
 xt/author/00-compile.t
 xt/author/pod-spell.t
 xt/release/changes_has_content.t
-xt/release/clean-namespaces.t
 xt/release/cpan-changes.t
 xt/release/distmeta.t
 xt/release/eol.t

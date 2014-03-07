@@ -46,12 +46,12 @@ my $static_prereqs = do { my $x = {
        'configure' => {
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '6.30',
-                                        'Module::Build::Tiny' => '0.034'
+                                        'Module::Build::Tiny' => '0.035'
                                       }
                       },
        'develop' => {
                       'recommends' => {
-                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.049'
+                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.052'
                                       },
                       'requires' => {
                                       'Dist::Zilla' => '5.013',
@@ -62,6 +62,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::MetaResources' => '0',
                                       'Dist::Zilla::Plugin::ModuleBuildTiny' => '0.004',
                                       'Dist::Zilla::Plugin::Prereqs' => '0',
+                                      'Dist::Zilla::Plugin::Prereqs::Soften' => '0',
                                       'Dist::Zilla::Plugin::Test::CheckBreaks' => '0',
                                       'Dist::Zilla::PluginBundle::Author::ETHER' => '0.021',
                                       'File::Spec' => '0',
@@ -71,7 +72,6 @@ my $static_prereqs = do { my $x = {
                                       'Pod::Weaver::Section::Contributors' => '0',
                                       'Test::CPAN::Changes' => '0.19',
                                       'Test::CPAN::Meta' => '0',
-                                      'Test::CleanNamespaces' => '0',
                                       'Test::Kwalitee' => '1.12',
                                       'Test::More' => '0.94',
                                       'Test::NoTabs' => '0',
@@ -103,7 +103,7 @@ my $static_prereqs = do { my $x = {
                                      'CPAN::Meta' => '0',
                                      'CPAN::Meta::Requirements' => '2.120900',
                                      'MooseX::ConfigFromFile' => '0',
-                                     'MooseX::SimpleConfig' => '0.07'
+                                     'MooseX::SimpleConfig' => '0'
                                    },
                    'requires' => {
                                    'ExtUtils::MakeMaker' => '0',

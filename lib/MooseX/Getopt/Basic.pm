@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
-$MooseX::Getopt::Basic::VERSION = '0.61';
+$MooseX::Getopt::Basic::VERSION = '0.62';
 use Moose::Role;
 
 use MooseX::Getopt::OptionTypeMap;
@@ -277,7 +277,12 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc
+=for :stopwords Stevan Little Infinity Interactive, Inc Brandon Devin Austin Drew Taylor
+Florian Ragwitz Gordon Irving Hans Dieter L Pearcey Hinrik Örn Sigurðsson
+Jesse Luehrs John Goulah Jonathan Swartz Black Justin Hunter Karen
+Etheridge Nelo Onyiah Ricardo SIGNES Ryan D Chris Johnson Shlomi Fish Todd
+Hepler Tomas Doran Yuval Prather Kogman Ævar Arnfjörð Bjarmason Dagfinn
+Ilmari Mannsåker Damien Krotkine
 
 =head1 NAME
 
@@ -285,7 +290,7 @@ MooseX::Getopt::Basic - MooseX::Getopt::Basic - role to implement the Getopt::Lo
 
 =head1 VERSION
 
-version 0.61
+version 0.62
 
 =head1 SYNOPSIS
 

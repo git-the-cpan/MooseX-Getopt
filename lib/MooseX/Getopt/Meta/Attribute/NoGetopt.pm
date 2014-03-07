@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Optional meta attribute for ignoring parameters
-$MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.61';
+$MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.62';
 use Moose;
 
 extends 'Moose::Meta::Attribute'; # << Moose extending Moose :)
@@ -32,7 +32,7 @@ MooseX::Getopt::Meta::Attribute::NoGetopt - Optional meta attribute for ignoring
 
 =head1 VERSION
 
-version 0.61
+version 0.62
 
 =head1 SYNOPSIS
 

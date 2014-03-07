@@ -21,9 +21,9 @@ build_requires:
   version: '0'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
-  Module::Build::Tiny: '0.034'
+  Module::Build::Tiny: '0.035'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.133380'
+generated_by: 'Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.140640'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -38,37 +38,37 @@ no_index:
 provides:
   MooseX::Getopt:
     file: lib/MooseX/Getopt.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::Basic:
     file: lib/MooseX/Getopt/Basic.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::Dashes:
     file: lib/MooseX/Getopt/Dashes.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::GLD:
     file: lib/MooseX/Getopt/GLD.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::Meta::Attribute:
     file: lib/MooseX/Getopt/Meta/Attribute.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::Meta::Attribute::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/NoGetopt.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::Meta::Attribute::Trait:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::Meta::Attribute::Trait::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::OptionTypeMap:
     file: lib/MooseX/Getopt/OptionTypeMap.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::ProcessedArgv:
     file: lib/MooseX/Getopt/ProcessedArgv.pm
-    version: '0.61'
+    version: '0.62'
   MooseX::Getopt::Strict:
     file: lib/MooseX/Getopt/Strict.pm
-    version: '0.61'
+    version: '0.62'
 requires:
   Carp: '0'
   Getopt::Long: '2.37'
@@ -90,15 +90,15 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Getopt
   homepage: https://github.com/moose/MooseX-Getopt
   repository: https://github.com/moose/MooseX-Getopt.git
-version: '0.61'
+version: '0.62'
 x_Dist_Zilla:
   perl:
-    version: '5.019008'
+    version: '5.019009'
   plugins:
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::ETHER/Git::NextVersion'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       config:
@@ -110,7 +110,7 @@ x_Dist_Zilla:
           phase: build
           skip: []
       name: '@Author::ETHER/build'
-      version: '0.016'
+      version: '0.020'
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       config:
@@ -121,7 +121,7 @@ x_Dist_Zilla:
           phase: release
           skip: []
       name: '@Author::ETHER/release'
-      version: '0.016'
+      version: '0.020'
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: '@Author::ETHER/ExecDir'
@@ -137,7 +137,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       name: '@Author::ETHER/Git::GatherDir'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: '@Author::ETHER/MetaYAML'
@@ -226,7 +226,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::PodSpelling
       name: '@Author::ETHER/Test::PodSpelling'
-      version: '2.006002'
+      version: '2.006007'
     -
       class: Dist::Zilla::Plugin::Test::Pod::No404s
       name: '@Author::ETHER/Test::Pod::No404s'
@@ -417,7 +417,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::RunExtraTests
       name: '@Author::ETHER/RunExtraTests'
-      version: '0.016'
+      version: '0.018'
     -
       class: Dist::Zilla::Plugin::MakeMaker::Fallback
       name: '@Author::ETHER/MakeMaker::Fallback'
@@ -441,11 +441,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Run::AfterBuild
       name: '@Author::ETHER/Run::AfterBuild'
-      version: '0.020'
+      version: '0.021'
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Author::ETHER/initial check'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts
       name: '@Author::ETHER/Git::CheckFor::MergeConflicts'
@@ -469,7 +469,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Author::ETHER/after tests'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: '@Author::ETHER/UploadToCPAN'
@@ -481,11 +481,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Author::ETHER/Git::Commit'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::ETHER/Git::Tag'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ETHER/GitHub::Update'
@@ -493,7 +493,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Push
       name: '@Author::ETHER/Git::Push'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::InstallRelease
       name: '@Author::ETHER/InstallRelease'
@@ -511,20 +511,22 @@ x_Dist_Zilla:
       name: '@Author::ETHER/ConfirmRelease'
       version: '5.013'
     -
+      class: Dist::Zilla::Plugin::Prereqs::Soften
+      config:
+        Dist::Zilla::Plugin::Prereqs::Soften:
+          modules:
+            - MooseX::SimpleConfig
+            - MooseX::ConfigFromFile
+          to_relationship: recommends
+      name: Prereqs::Soften
+      version: '0.002000'
+    -
       class: Dist::Zilla::Plugin::Test::CheckBreaks
       name: Test::CheckBreaks
-      version: '0.004'
+      version: '0.007'
     -
       class: Dist::Zilla::Plugin::MetaResources
       name: MetaResources
-      version: '5.013'
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: test
-          type: recommends
-      name: TestRecommends
       version: '5.013'
     -
       class: Dist::Zilla::Plugin::Prereqs
@@ -570,13 +572,16 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::FinderCode
       name: ':NoFiles'
       version: '5.013'
+    -
+      class: Dist::Zilla::Plugin::VerifyPhases
+      name: '@Author::ETHER/PHASE VERIFICATION'
+      version: '0.002'
   zilla:
     class: Dist::Zilla::Dist::Builder
     config:
       is_trial: '0'
     version: '5.013'
 x_authority: cpan:STEVAN
-x_breaks: {}
 x_contributors:
   - 'Brandon L Black <blblack@gmail.com>'
   - 'Chris Prather <chris@prather.org>'
