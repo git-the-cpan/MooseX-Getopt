@@ -92,13 +92,13 @@ avarab
 lib
 MooseX
 Getopt
-OptionTypeMap
 Meta
 Attribute
 NoGetopt
 GLD
-Trait
-Strict
 Dashes
 Basic
+Trait
+OptionTypeMap
 ProcessedArgv
+Strict

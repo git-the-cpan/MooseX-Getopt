@@ -51,19 +51,20 @@ my $static_prereqs = do { my $x = {
                       },
        'develop' => {
                       'recommends' => {
-                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.052'
+                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.055'
                                       },
                       'requires' => {
-                                      'Dist::Zilla' => '5.013',
+                                      'Dist::Zilla' => '5.014',
                                       'Dist::Zilla::Plugin::ContributorsFromGit' => '0',
                                       'Dist::Zilla::Plugin::GitHub::Update' => '0',
                                       'Dist::Zilla::Plugin::GithubMeta' => '0',
-                                      'Dist::Zilla::Plugin::MakeMaker::Fallback' => '0',
+                                      'Dist::Zilla::Plugin::MakeMaker::Fallback' => '0.008',
                                       'Dist::Zilla::Plugin::MetaResources' => '0',
                                       'Dist::Zilla::Plugin::ModuleBuildTiny' => '0.004',
                                       'Dist::Zilla::Plugin::Prereqs' => '0',
                                       'Dist::Zilla::Plugin::Prereqs::Soften' => '0',
                                       'Dist::Zilla::Plugin::Test::CheckBreaks' => '0',
+                                      'Dist::Zilla::Plugin::Test::CleanNamespaces' => '0',
                                       'Dist::Zilla::PluginBundle::Author::ETHER' => '0.021',
                                       'File::Spec' => '0',
                                       'IO::Handle' => '0',
@@ -72,6 +73,7 @@ my $static_prereqs = do { my $x = {
                                       'Pod::Weaver::Section::Contributors' => '0',
                                       'Test::CPAN::Changes' => '0.19',
                                       'Test::CPAN::Meta' => '0',
+                                      'Test::CleanNamespaces' => '>= 0.04, != 0.06',
                                       'Test::Kwalitee' => '1.12',
                                       'Test::More' => '0.94',
                                       'Test::NoTabs' => '0',
@@ -119,7 +121,7 @@ my $static_prereqs = do { my $x = {
                                    'Test::More' => '0',
                                    'Test::Requires' => '0',
                                    'Test::Trap' => '0',
-                                   'Test::Warnings' => '0',
+                                   'Test::Warnings' => '0.009',
                                    'if' => '0',
                                    'version' => '0'
                                  }
