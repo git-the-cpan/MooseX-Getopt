@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Optional meta attribute for ignoring parameters
-$MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.63';
+$MooseX::Getopt::Meta::Attribute::NoGetopt::VERSION = '0.64';
 use Moose;
 
 extends 'Moose::Meta::Attribute'; # << Moose extending Moose :)
@@ -24,15 +24,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Stevan Little Infinity Interactive, Inc
-
 =head1 NAME
 
 MooseX::Getopt::Meta::Attribute::NoGetopt - Optional meta attribute for ignoring parameters
 
 =head1 VERSION
 
-version 0.63
+version 0.64
 
 =head1 SYNOPSIS
 

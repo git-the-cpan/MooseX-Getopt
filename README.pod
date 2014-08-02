@@ -1,21 +1,3 @@
-package MooseX::Getopt;
-BEGIN {
-  $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
-}
-# git description: v0.63-8-g1e63eb5
-$MooseX::Getopt::VERSION = '0.64';
-# ABSTRACT: A Moose role for processing command line options
-# KEYWORDS: moose extension command line options attributes executable flags switches arguments
-
-use Moose::Role 0.56;
-use namespace::autoclean;
-
-with 'MooseX::Getopt::GLD';
-
-1;
-
-__END__
-
 =pod
 
 =encoding UTF-8
