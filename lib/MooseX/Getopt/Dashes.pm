@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Dashes::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: convert underscores in attribute names to dashes
-$MooseX::Getopt::Dashes::VERSION = '0.64';
+$MooseX::Getopt::Dashes::VERSION = '0.65';
 use Moose::Role;
 with 'MooseX::Getopt';
 use namespace::autoclean;
@@ -34,7 +34,7 @@ MooseX::Getopt::Dashes - convert underscores in attribute names to dashes
 
 =head1 VERSION
 
-version 0.64
+version 0.65
 
 =head1 SYNOPSIS
 

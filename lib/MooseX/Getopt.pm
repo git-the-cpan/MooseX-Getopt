@@ -2,8 +2,8 @@ package MooseX::Getopt;
 BEGIN {
   $MooseX::Getopt::AUTHORITY = 'cpan:STEVAN';
 }
-# git description: v0.63-8-g1e63eb5
-$MooseX::Getopt::VERSION = '0.64';
+# git description: v0.64-2-gc7ba3f9
+$MooseX::Getopt::VERSION = '0.65';
 # ABSTRACT: A Moose role for processing command line options
 # KEYWORDS: moose extension command line options attributes executable flags switches arguments
 
@@ -26,7 +26,7 @@ MooseX::Getopt - A Moose role for processing command line options
 
 =head1 VERSION
 
-version 0.64
+version 0.65
 
 =head1 SYNOPSIS
 
@@ -309,6 +309,8 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =head1 CONTRIBUTORS
+
+=for stopwords Brandon L Black Chris Prather Dagfinn Ilmari Mannsåker Damien Krotkine Devin Austin Drew Taylor Florian Ragwitz Gordon Irving Hans Dieter Pearcey Hinrik Örn Sigurðsson Jesse Luehrs John Goulah Jonathan Swartz Justin Hunter Karen Etheridge Nelo Onyiah Olaf Alders Ricardo SIGNES Ryan D Johnson Shlomi Fish Stevan Little Todd Hepler Tomas Doran Yuval Kogman Ævar Arnfjörð Bjarmason
 
 =over 4
 

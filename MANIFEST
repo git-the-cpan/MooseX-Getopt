@@ -9,7 +9,6 @@ META.json
 META.yml
 Makefile.PL
 README
-README.pod
 dist.ini
 lib/MooseX/Getopt.pm
 lib/MooseX/Getopt/Basic.pm

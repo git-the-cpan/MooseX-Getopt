@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Optional meta attribute trait for ignoring parameters
-$MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.64';
+$MooseX::Getopt::Meta::Attribute::Trait::NoGetopt::VERSION = '0.65';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -26,7 +26,7 @@ MooseX::Getopt::Meta::Attribute::Trait::NoGetopt - Optional meta attribute trait
 
 =head1 VERSION
 
-version 0.64
+version 0.65
 
 =head1 SYNOPSIS
 

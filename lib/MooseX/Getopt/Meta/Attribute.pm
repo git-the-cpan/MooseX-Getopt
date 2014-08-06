@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::Meta::Attribute::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Optional meta attribute for custom option names
-$MooseX::Getopt::Meta::Attribute::VERSION = '0.64';
+$MooseX::Getopt::Meta::Attribute::VERSION = '0.65';
 use Moose;
 use Moose::Util::TypeConstraints;
 use namespace::autoclean;
@@ -30,7 +30,7 @@ MooseX::Getopt::Meta::Attribute - Optional meta attribute for custom option name
 
 =head1 VERSION
 
-version 0.64
+version 0.65
 
 =head1 SYNOPSIS
 

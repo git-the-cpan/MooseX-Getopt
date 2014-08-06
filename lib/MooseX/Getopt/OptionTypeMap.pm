@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::Getopt::OptionTypeMap::AUTHORITY = 'cpan:STEVAN';
 }
 # ABSTRACT: Storage for the option to type mappings
-$MooseX::Getopt::OptionTypeMap::VERSION = '0.64';
+$MooseX::Getopt::OptionTypeMap::VERSION = '0.65';
 use Moose;
 use Carp 'confess';
 use Scalar::Util 'blessed';
@@ -105,7 +105,7 @@ MooseX::Getopt::OptionTypeMap - Storage for the option to type mappings
 
 =head1 VERSION
 
-version 0.64
+version 0.65
 
 =head1 DESCRIPTION
 
