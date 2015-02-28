@@ -46,6 +46,7 @@ my @files = (
     't/111_gld_pass_through.t',
     't/112_configfile_constructor_arg.t',
     't/112_configfile_constructor_arg.yml',
+    't/113_moosex_strictconstructor.t',
     't/zzz-check-breaks.t',
     'xt/author/00-compile.t',
     'xt/author/clean-namespaces.t',

@@ -1,6 +1,6 @@
 package MooseX::Getopt::Meta::Attribute::Trait;
 # ABSTRACT: Optional meta attribute trait for custom option names
-$MooseX::Getopt::Meta::Attribute::Trait::VERSION = '0.66';
+our $VERSION = '0.67';
 use Moose::Role;
 use Moose::Util::TypeConstraints;
 use namespace::autoclean;
@@ -45,7 +45,7 @@ MooseX::Getopt::Meta::Attribute::Trait - Optional meta attribute trait for custo
 
 =head1 VERSION
 
-version 0.66
+version 0.67
 
 =head1 SYNOPSIS
 
