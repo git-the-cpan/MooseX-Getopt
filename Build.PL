@@ -76,7 +76,7 @@ EOW
         "Stevan Little <stevan\@iinteractive.com>"
       ],
       "dist_name" => "MooseX-Getopt",
-      "dist_version" => "0.67",
+      "dist_version" => "0.68",
       "license" => "perl",
       "module_name" => "MooseX::Getopt",
       "recommends" => {},

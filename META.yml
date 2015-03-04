@@ -46,37 +46,37 @@ no_index:
 provides:
   MooseX::Getopt:
     file: lib/MooseX/Getopt.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::Basic:
     file: lib/MooseX/Getopt/Basic.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::Dashes:
     file: lib/MooseX/Getopt/Dashes.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::GLD:
     file: lib/MooseX/Getopt/GLD.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::Meta::Attribute:
     file: lib/MooseX/Getopt/Meta/Attribute.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::Meta::Attribute::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/NoGetopt.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::Meta::Attribute::Trait:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::Meta::Attribute::Trait::NoGetopt:
     file: lib/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::OptionTypeMap:
     file: lib/MooseX/Getopt/OptionTypeMap.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::ProcessedArgv:
     file: lib/MooseX/Getopt/ProcessedArgv.pm
-    version: '0.67'
+    version: '0.68'
   MooseX::Getopt::Strict:
     file: lib/MooseX/Getopt/Strict.pm
-    version: '0.67'
+    version: '0.68'
 requires:
   Carp: '0'
   Getopt::Long: '2.37'
@@ -98,7 +98,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Getopt
   homepage: https://github.com/moose/MooseX-Getopt
   repository: https://github.com/moose/MooseX-Getopt.git
-version: '0.67'
+version: '0.68'
 x_Dist_Zilla:
   perl:
     version: '5.021006'
@@ -114,18 +114,10 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::RewriteVersion::Transitional
       config:
-        Dist::Zilla::Plugin::PkgVersion: {}
         Dist::Zilla::Plugin::RewriteVersion::Transitional:
           _fallback_version_provider_args:
             version_regexp: ^v([\d._]+)(-TRIAL)?$
           fallback_version_provider: Git::NextVersion
-        Git::NextVersion:
-          Dist::Zilla::Plugin::Git::NextVersion:
-            first_version: '0.001'
-            version_by_branch: '0'
-            version_regexp: (?^:^v([\d._]+)(-TRIAL)?$)
-          Dist::Zilla::Role::Git::Repo:
-            repo_root: .
       name: '@Author::ETHER/RewriteVersion::Transitional'
       version: '0.004'
     -
@@ -173,6 +165,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::GatherDir:
           exclude_filename:
             - README.pod
+            - TODO
             - LICENSE
             - CONTRIBUTING
           exclude_match: []
@@ -186,7 +179,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::GatherDir'
-      version: '2.029'
+      version: '2.030'
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: '@Author::ETHER/MetaYAML'
@@ -581,7 +574,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/initial check'
-      version: '2.029'
+      version: '2.030'
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts
       config:
@@ -620,7 +613,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/after tests'
-      version: '2.029'
+      version: '2.030'
     -
       class: Dist::Zilla::Plugin::CheckIssues
       name: '@Author::ETHER/CheckIssues'
@@ -658,21 +651,21 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/release snapshot'
-      version: '2.029'
+      version: '2.030'
     -
       class: Dist::Zilla::Plugin::Git::Tag
       config:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: v0.67
+          tag: v0.68
           tag_format: v%v%t
           tag_message: v%v%t
           time_zone: local
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Tag'
-      version: '2.029'
+      version: '2.030'
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ETHER/GitHub::Update'
@@ -700,7 +693,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/post-release commit'
-      version: '2.029'
+      version: '2.030'
     -
       class: Dist::Zilla::Plugin::Git::Push
       config:
@@ -711,7 +704,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
       name: '@Author::ETHER/Git::Push'
-      version: '2.029'
+      version: '2.030'
     -
       class: Dist::Zilla::Plugin::Run::AfterRelease
       config:
@@ -738,14 +731,15 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Prereqs::Soften
       config:
         Dist::Zilla::Plugin::Prereqs::Soften:
-          copy_to: []
+          copy_to:
+            - develop.requires
           modules:
             - MooseX::SimpleConfig
             - MooseX::ConfigFromFile
           modules_from_features: ~
           to_relationship: recommends
       name: Prereqs::Soften
-      version: '0.005001'
+      version: '0.006000'
     -
       class: Dist::Zilla::Plugin::Prereqs::Soften
       config:
@@ -757,7 +751,7 @@ x_Dist_Zilla:
           modules_from_features: ~
           to_relationship: suggests
       name: suggests
-      version: '0.005001'
+      version: '0.006000'
     -
       class: Dist::Zilla::Plugin::Test::CheckBreaks
       config:
@@ -844,7 +838,7 @@ x_contributors:
   - 'Damien Krotkine <dkrotkine@weborama.com>'
   - 'Hinrik Örn Sigurðsson <hinrik.sig@gmail.com>'
   - 'Todd Hepler <thepler@employees.org>'
-  - 'Devin Austin <devin@devin-laptop.(none)>'
+  - 'Devin Austin <dhoss@cpan.org>'
   - 'Jose Luis Martinez <jlmartinez@capside.com>'
   - 'Chris Prather <chris@prather.org>'
   - 'Justin Hunter <justin.d.hunter@gmail.com>'

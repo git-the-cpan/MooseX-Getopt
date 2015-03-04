@@ -1,7 +1,9 @@
-package MooseX::Getopt; # git description: v0.66-14-g157612e
+package MooseX::Getopt; # git description: v0.67-7-g7122518
 # ABSTRACT: A Moose role for processing command line options
 # KEYWORDS: moose extension command line options attributes executable flags switches arguments
-our $VERSION = '0.67';
+
+our $VERSION = '0.68';
+
 use Moose::Role 0.56;
 use namespace::autoclean;
 
@@ -21,7 +23,7 @@ MooseX::Getopt - A Moose role for processing command line options
 
 =head1 VERSION
 
-version 0.67
+version 0.68
 
 =head1 SYNOPSIS
 
@@ -371,7 +373,7 @@ Todd Hepler <thepler@employees.org>
 
 =item *
 
-Devin Austin <devin@devin-laptop.(none)>
+Devin Austin <dhoss@cpan.org>
 
 =item *
 

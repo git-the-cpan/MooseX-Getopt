@@ -1,6 +1,8 @@
 package MooseX::Getopt::Basic;
 # ABSTRACT: MooseX::Getopt::Basic - role to implement the Getopt::Long functionality
-our $VERSION = '0.67';
+
+our $VERSION = '0.68';
+
 use Moose::Role;
 
 use MooseX::Getopt::OptionTypeMap;
@@ -285,7 +287,7 @@ MooseX::Getopt::Basic - MooseX::Getopt::Basic - role to implement the Getopt::Lo
 
 =head1 VERSION
 
-version 0.67
+version 0.68
 
 =head1 SYNOPSIS
 
